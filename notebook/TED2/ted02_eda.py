@@ -8,15 +8,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# ============================================================
-# TED 02 - LIMPEZA, SANEAMENTO E ANÁLISE EXPLORATÓRIA
-# Projeto: UBS Centenário - Sala de Vacina
-# Dataset: Doses aplicadas pelo PNI - 2025
-#
-# A base possui mais de 100 GB. Por isso, os CSVs são lidos
-# em blocos (chunks), sem carregar tudo na memória.
-# ============================================================
-
 CHUNK_SIZE = 200_000
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -72,7 +63,7 @@ print(f"Arquivos encontrados: {len(files)}")
 for f in files:
     print(f" - {f.name} | {f.stat().st_size / (1024**3):.2f} GB")
 
-# ---------- acumuladores ----------
+# acumuladores 
 total_rows = 0
 duplicate_extras = 0
 invalid_dates = 0
@@ -164,12 +155,7 @@ def counter_to_csv(counter, columns, filename, limit=None):
 
 
 def criar_leitor_csv(path):
-    """
-    Tenta identificar automaticamente a codificação do arquivo.
-    O PNI 2025 pode apresentar arquivos em UTF-8 ou em codificações
-    compatíveis com Windows/Latin-1.
-    """
-
+   
     codificacoes = [
         "utf-8-sig",
         "utf-8",
@@ -214,9 +200,7 @@ def criar_leitor_csv(path):
     )
 
 
-# ============================================================
 # PROCESSAMENTO
-# ============================================================
 
 for file_number, path in enumerate(files, start=1):
 
@@ -239,9 +223,7 @@ for file_number, path in enumerate(files, start=1):
         if chunk.empty:
             continue
 
-        # ----------------------------------------------------
         # 1. Limpeza textual e valores ausentes
-        # ----------------------------------------------------
         for col in USECOLS:
             chunk[col] = clean_text(chunk[col])
 
@@ -254,12 +236,8 @@ for file_number, path in enumerate(files, start=1):
         total_rows += n
         rows_this_file += n
 
-        # ----------------------------------------------------
         # 2. Duplicidades por co_documento dentro de cada bloco
-        #
-        # Não é uma deduplicação global. É uma verificação
-        # segura para a leitura em chunks.
-        # ----------------------------------------------------
+       
         duplicate_extras += int(
             chunk["co_documento"]
             .dropna()
@@ -267,9 +245,9 @@ for file_number, path in enumerate(files, start=1):
             .sum()
         )
 
-        # ----------------------------------------------------
+        
         # 3. Data da vacinação
-        # ----------------------------------------------------
+
         raw_date = chunk["dt_vacina"]
         nonempty_date = (
             raw_date.notna()
@@ -301,9 +279,9 @@ for file_number, path in enumerate(files, start=1):
                 months.value_counts().to_dict()
             )
 
-        # ----------------------------------------------------
+        
         # 4. Idade
-        # ----------------------------------------------------
+        
         raw_age = chunk["nu_idade_paciente"]
         nonempty_age = (
             raw_age.notna()
@@ -341,9 +319,9 @@ for file_number, path in enumerate(files, start=1):
                 age_int.value_counts().to_dict()
             )
 
-        # ----------------------------------------------------
+        
         # 5. Vacinas
-        # ----------------------------------------------------
+        
         g = (
             chunk.groupby(
                 [
@@ -366,9 +344,9 @@ for file_number, path in enumerate(files, start=1):
                 )
             ] += int(value)
 
-        # ----------------------------------------------------
+        
         # 6. Doses
-        # ----------------------------------------------------
+        
         g = (
             chunk.groupby(
                 [
@@ -390,9 +368,8 @@ for file_number, path in enumerate(files, start=1):
                 )
             ] += int(value)
 
-        # ----------------------------------------------------
         # 7. UF e sexo
-        # ----------------------------------------------------
+
         uf_counts.update(
             chunk["sg_uf_paciente"]
             .fillna("Não informado")
@@ -409,9 +386,8 @@ for file_number, path in enumerate(files, start=1):
             .to_dict()
         )
 
-        # ----------------------------------------------------
         # 8. Idade por vacina
-        # ----------------------------------------------------
+
         age_part = chunk.loc[
             valid_age,
             [
@@ -467,9 +443,8 @@ for file_number, path in enumerate(files, start=1):
                     ages.value_counts().to_dict()
                 )
 
-        # ----------------------------------------------------
         # 9. Indicador dt_deletado_rnds
-        # ----------------------------------------------------
+
         deleted_marked += int(
             (
                 chunk["dt_deletado_rnds"].notna()
@@ -477,9 +452,8 @@ for file_number, path in enumerate(files, start=1):
             ).sum()
         )
 
-        # ----------------------------------------------------
         # 10. Pequena amostra tratada para documentação
-        # ----------------------------------------------------
+
         if not sample_saved:
 
             sample = chunk.head(1000).copy()
@@ -516,9 +490,8 @@ for file_number, path in enumerate(files, start=1):
     )
 
 
-# ============================================================
 # ESTATÍSTICAS DE IDADE E OUTLIERS
-# ============================================================
+
 
 if valid_ages:
     age_sum = sum(
@@ -568,9 +541,8 @@ else:
     outliers_low = outliers_high = 0
 
 
-# ============================================================
 # CSVs DE RESULTADO
-# ============================================================
+
 
 pd.DataFrame(
     [
@@ -792,9 +764,8 @@ pd.DataFrame(
 )
 
 
-# ============================================================
 # GRÁFICOS
-# ============================================================
+
 
 age_plot = pd.DataFrame(
     sorted(age_counts.items()),
@@ -903,9 +874,8 @@ if not top_uf.empty:
     plt.close()
 
 
-# ============================================================
 # FINAL
-# ============================================================
+
 
 minutes = (time.perf_counter() - start) / 60
 
