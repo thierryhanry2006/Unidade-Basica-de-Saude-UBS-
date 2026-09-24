@@ -1,0 +1,51 @@
+﻿co_vacina,sg_imunobiologico,ds_nome,quantidade_idade_valida,media_idade,mediana_idade,minimo_idade,maximo_idade,desvio_padrao_idade
+33,INF3,"vacina influenza trivalente (fragmentada, inativada)",60493321,38.424849497021334,39.0,0,120,26.607455427869517
+9,HB,vacina hepatite B (recombinante),11427496,33.352370633076575,34.0,0,119,24.018674526943837
+25,dT,vacina adsorvida difteria e tétano adulto,11422857,39.618785475472556,38.0,0,120,19.508114383069078
+22,VIP,"vacina poliomelite 1, 2 e 3 (inativada)",10601968,1.0832724641311877,0.0,0,115,2.61768305182684
+14,VFA,vacina febre amarela (atenuada),8295149,15.435524786836258,4.0,0,119,18.473364304951915
+42,Penta,"vacina adsorvida difteria, tétano, pertussis, hepatite B (recombinante) e Haemophilus influenzae B (conjugada)",6532068,0.15089218299625784,0.0,0,115,1.3776219656814783
+26,VPC10,vacina pneumocócica 10-valente (conjugada),6248130,0.40697136583265714,0.0,0,115,1.441738740364352
+24,SCR,"vacina sarampo, caxumba, rubéola (atenuada)",5835826,18.019803709020795,4.0,0,119,19.61063512870468
+74,MenACWY,vacina meningocócica ACWY (conjugada),5016626,8.751416589556406,11.0,0,120,11.11269891856741
+41,MenC,vacina meningocócica C (conjugada),4853557,0.9702053566075355,0.0,0,115,6.221711398617463
+104,DNG,"vacina dengue 1, 2, 3 e 4 (atenuada)",4371612,12.761921918047621,12.0,0,120,6.830746130650991
+45,ROTA,vacina rotavírus humano G1P[8] (atenuada),4324641,0.04674700165863479,0.0,0,114,1.1767758409332925
+46,DTP,"vacina adsorvida difteria, tétano e pertussis",4321018,2.8101984300921683,4.0,0,115,2.5749796682281336
+67,HPV4,"vacina papilomavírus humano 6, 11, 16 e 18 (recombinante)",3496120,13.004749264899374,9.0,0,113,8.428431737068244
+34,VZ,vacina varicela (atenuada),3026335,4.276913824807894,4.0,0,112,5.146467754462409
+87,COV-19 PFIZER-COMIRN,vacina covid-19,3020119,56.69312335043752,63.0,0,119,20.15097015252077
+15,BCG,vacina BCG,2601380,0.23945021488594515,0.0,0,113,3.2056695076886608
+57,dTpa,"vacina adsorvida difteria, tétano e pertussis (acelular)",2528591,30.140755068731956,28.0,0,109,11.017831741004755
+55,HAinf,vacina adsorvida hepatite A (inativada),2346612,1.4013300878031818,1.0,0,115,2.876579081706059
+77,INF4,"vacina influenza tetravalente (fragmentada, inativada)",2279966,34.34473496534597,36.0,0,119,21.344780678242387
+56,SCRV,"vacina sarampo, caxumba, rubéola e varicela (atenuada)",2147158,2.2578538700924664,1.0,0,115,4.574745466398829
+97,COVID-19 MOD-SPIK,vacina covid-19,2060436,47.50741881815305,61.0,0,120,29.572257992146156
+102,COVID-19 PFIZER-<5a,vacina covid-19,2053218,1.5385170985253394,1.0,0,119,2.87299088223895
+112,COVID19 SERUM/ZALIKA,vacina covid-19 (recombinante),1567414,56.94866129816373,63.0,0,119,20.162048452281816
+37,VR,vacina raiva (inativada),1351902,36.23869481663612,34.0,0,115,20.132088003304105
+107,VPC20,vacina pneumocócica 20-valente (conjugada),871481,16.446573132403344,1.0,0,111,28.54843095235027
+78,MenB,vacina adsorvida meningocócica B (recombinante),671380,2.469660996752957,0.0,0,120,7.324859405535675
+21,VPP23,vacina pneumocócica 23-valente (polissacarídica),625096,58.6453408756415,64.0,0,120,22.72031546544917
+43,Hexa acelular,"vacina adsorvida difteria, tétano, pertussis (acelular), hepatite B (recombinante), poliomielite 1, 2 e 3 (inativada), Haemophilus influenzae B (conjugada)",502287,0.3858451443099264,0.0,0,98,3.200521212440096
+108,VVSR-Rec,vacina vírus sincicial respiratório A e B (recombinante),423168,30.173767865245008,30.0,0,109,8.490573318914304
+101,VHZR,vacina herpes-zóster (recombinante),378181,65.05731118168285,65.0,0,115,12.129056384242782
+65,ROTA5,"vacina rotavírus humano/bovino G1, G2, G3, G4 e P1A[8] (atenuada)",348858,0.27062300420228286,0.0,0,98,3.232568873661147
+93,HPV9,vacina papilomavírus humano 9-valente (recombinante),324144,32.22642714349178,33.0,0,110,12.25832373670649
+59,VPC13,vacina pneumocócica 13-valente (conjugada),314640,39.03711543351132,43.0,0,120,30.149378796204136
+17,Hib,vacina Haemophilus influenza B (conjugada),208346,48.781469286667374,49.0,0,103,16.00637311825771
+106,VPC15,"vacina adsorvida pneumocócica 15-valente (conjugada, polissacarídica)",207596,6.016320160311374,0.0,0,120,18.22899009550991
+83,HAad,vacina adsorvida hepatite A (inativada),146778,40.37793129760591,38.0,0,99,14.874351601460722
+29,Penta acelular,"vacina adsorvida difteria, tétano, pertussis (acelular), poliomielite 1, 2 e 3 (inativada) e Haemophilus influenzae B (conjugada)",139402,1.1052352190069008,1.0,0,97,4.288021596540259
+99,COV19-RNAm-PED,vacina covid-19,124066,21.959884255154513,8.0,0,107,25.70148428856543
+36,SR,"vacina sarampo, rubéola (atenuada)",121989,0.7066046938658403,0.0,0,94,5.307520280075563
+82,Dengue,"vacina dengue 1, 2, 3 e 4 (recombinante e atenuada)",100332,22.621396962085875,13.0,0,99,18.022476629548798
+109,VVSR-RecAdj,"vacina vírus sincicial respiratório (recombinante, adjuvada)",87081,60.33490658122897,69.0,0,112,25.984831973705568
+103,COVID-19 PFIZER - BI,vacina covid-19 bivalente,73963,56.09130240796074,63.0,0,107,20.914411206827438
+58,DTPa/VIP,"vacina adsorvida difteria, tétano, pertussis (acelular), poliomielite 1, 2 e 3 (inativada)",59518,13.571574985718605,4.0,0,118,18.66686765433012
+23,IGHAR,imunoglobulina humana antirrábica,58367,36.43976904757825,35.0,0,107,20.952225444793413
+110,INF4-alta dosagem,"vacina influenza tetravalente (fragmentada, inativada)",57250,73.05774672489083,73.0,0,109,11.0434149568824
+76,VHZ,vacina herpes-zóster (atenuada),56853,64.74191335549575,65.0,0,104,12.091663742713875
+44,INFH1N1-2009,"vacina influenza tipo A (H1N1) (inativada, fragmentada)",47967,34.444159526341025,32.0,0,105,25.40960292988294
+72,INFH1N1-2009-2,"vacina influenza tipo A (H1N1) (inativada, fragmentada)",44907,34.25661923530853,35.0,0,107,21.41163327396344
+35,HA virossomal,vacina adsorvida hepatite A (virossomal),33435,34.77541498429789,35.0,0,102,18.87149266387578

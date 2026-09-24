@@ -1,0 +1,16 @@
+# Ambiente virtual Python
+.venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Dados brutos do PNI 2025
+data/raw/
+
+# Arquivos ZIP dos dados
+*.zip
+
+# Arquivos temporários
+*.tmp
+*.temp

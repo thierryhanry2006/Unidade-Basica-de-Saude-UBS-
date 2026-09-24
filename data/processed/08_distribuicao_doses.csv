@@ -1,0 +1,81 @@
+﻿co_dose_vacina,ds_tipo_dose,registros
+9,Única,72246157
+1,1ª Dose,32813074
+2,2ª Dose,24951467
+38,Reforço,17665180
+8,Dose,14605803
+3,3ª Dose,9155650
+6,1º Reforço,2907869
+7,2º Reforço,2359302
+10,Revacinação,801846
+4,4ª Dose,255007
+57,Dose Zero,215764
+32,1ª Dose Revacinação,101536
+59,Profilaxia/Tratamento com 1 unidade,65486
+33,2ª Dose Revacinação,42084
+49,1ª Dose Dobrada,29872
+36,Dose Inicial,28373
+34,3ª Dose Revacinação,25165
+52,4ª Dose Dobrada,25083
+50,2ª Dose Dobrada,23396
+51,3ª Dose Dobrada,20167
+37,Dose Adicional,18380
+61,Profilaxia/Tratamento com 3 unidades,15820
+60,Profilaxia/Tratamento com 2 unidades,14671
+62,Profilaxia/Tratamento com 4 unidades,9591
+11,Tratamento com uma dose,6985
+53,1ª Dose Revacinação Dobrada,6449
+63,Profilaxia/Tratamento com 5 unidades,5695
+39,3º Reforço,4919
+54,2ª Dose Revacinação Dobrada,4260
+55,3ª Dose Revacinação Dobrada,3522
+56,4ª Dose Revacinação Dobrada,3360
+5,5ª Dose,3109
+64,Profilaxia/Tratamento com 6 unidades,2914
+13,Tratamento com três doses,1503
+35,4ª Dose Revacinação,1365
+40,4º Reforço,1352
+45,2ª Dose Fracionada,1066
+41,5º Reforço,1014
+12,Tratamento com duas doses,985
+68,Profilaxia/Tratamento com 10 unidades,783
+15,Tratamento com cinco doses,760
+66,Profilaxia/Tratamento com 8 unidades,751
+65,Profilaxia/Tratamento com 7 unidades,725
+14,Tratamento com quatro doses,645
+70,Profilaxia/Tratamento com 12 unidades,354
+44,1ª Dose Fracionada,339
+43,5ª Dose Revacinação,315
+16,Tratamento com seis doses,290
+67,Profilaxia/Tratamento com 9 unidades,198
+25,Tratamento com quinze doses,179
+46,3ª Dose Fracionada,135
+26,Tratamento com dezesseis doses,115
+73,Profilaxia/Tratamento com 15 unidades,85
+78,Profilaxia/Tratamento com 20 unidades,84
+27,Tratamento com dezessete doses,79
+42,6º Reforço,64
+24,Tratamento com quatorze doses,56
+69,Profilaxia/Tratamento com 11 unidades,56
+72,Profilaxia/Tratamento com 14 unidades,51
+17,Tratamento com sete doses,47
+58,Reforço Zero,41
+71,Profilaxia/Tratamento com 13 unidades,25
+22,Tratamento com doze doses,24
+18,Tratamento com oito doses,23
+74,Profilaxia/Tratamento com 16 unidades,18
+30,Tratamento com vinte doses,17
+31,Tratamento com vinte e quatro doses,15
+76,Profilaxia/Tratamento com 18 unidades,15
+20,Tratamento com dez doses,13
+82,Profilaxia/Tratamento com 24 unidades,13
+19,Tratamento com nove doses,12
+28,Tratamento com dezoito doses,11
+77,Profilaxia/Tratamento com 19 unidades,8
+81,Profilaxia/Tratamento com 23 unidades,6
+47,4ª Dose Fracionada,6
+75,Profilaxia/Tratamento com 17 unidades,5
+23,Tratamento com treze doses,4
+21,Tratamento com onze doses,4
+79,Profilaxia/Tratamento com 21 unidades,2
+80,Profilaxia/Tratamento com 22 unidades,1

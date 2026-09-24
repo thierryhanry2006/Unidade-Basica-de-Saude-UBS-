@@ -1,0 +1,114 @@
+﻿co_vacina,sg_imunobiologico,ds_nome,registros
+33,INF3,"vacina influenza trivalente (fragmentada, inativada)",60493978
+9,HB,vacina hepatite B (recombinante),11427555
+25,dT,vacina adsorvida difteria e tétano adulto,11422945
+22,VIP,"vacina poliomelite 1, 2 e 3 (inativada)",10601972
+14,VFA,vacina febre amarela (atenuada),8295176
+42,Penta,"vacina adsorvida difteria, tétano, pertussis, hepatite B (recombinante) e Haemophilus influenzae B (conjugada)",6532069
+26,VPC10,vacina pneumocócica 10-valente (conjugada),6248130
+24,SCR,"vacina sarampo, caxumba, rubéola (atenuada)",5835854
+74,MenACWY,vacina meningocócica ACWY (conjugada),5016632
+41,MenC,vacina meningocócica C (conjugada),4853558
+104,DNG,"vacina dengue 1, 2, 3 e 4 (atenuada)",4371615
+45,ROTA,vacina rotavírus humano G1P[8] (atenuada),4324641
+46,DTP,"vacina adsorvida difteria, tétano e pertussis",4321021
+67,HPV4,"vacina papilomavírus humano 6, 11, 16 e 18 (recombinante)",3496127
+34,VZ,vacina varicela (atenuada),3026340
+87,COV-19 PFIZER-COMIRN,vacina covid-19,3020140
+15,BCG,vacina BCG,2601380
+57,dTpa,"vacina adsorvida difteria, tétano e pertussis (acelular)",2528630
+55,HAinf,vacina adsorvida hepatite A (inativada),2346614
+77,INF4,"vacina influenza tetravalente (fragmentada, inativada)",2279973
+56,SCRV,"vacina sarampo, caxumba, rubéola e varicela (atenuada)",2147161
+97,COVID-19 MOD-SPIK,vacina covid-19,2060446
+102,COVID-19 PFIZER-<5a,vacina covid-19,2053218
+112,COVID19 SERUM/ZALIKA,vacina covid-19 (recombinante),1567437
+37,VR,vacina raiva (inativada),1351927
+107,VPC20,vacina pneumocócica 20-valente (conjugada),871482
+78,MenB,vacina adsorvida meningocócica B (recombinante),671381
+21,VPP23,vacina pneumocócica 23-valente (polissacarídica),625112
+43,Hexa acelular,"vacina adsorvida difteria, tétano, pertussis (acelular), hepatite B (recombinante), poliomielite 1, 2 e 3 (inativada), Haemophilus influenzae B (conjugada)",502287
+108,VVSR-Rec,vacina vírus sincicial respiratório A e B (recombinante),423168
+101,VHZR,vacina herpes-zóster (recombinante),378183
+65,ROTA5,"vacina rotavírus humano/bovino G1, G2, G3, G4 e P1A[8] (atenuada)",348858
+93,HPV9,vacina papilomavírus humano 9-valente (recombinante),324146
+59,VPC13,vacina pneumocócica 13-valente (conjugada),314644
+17,Hib,vacina Haemophilus influenza B (conjugada),208351
+106,VPC15,"vacina adsorvida pneumocócica 15-valente (conjugada, polissacarídica)",207596
+83,HAad,vacina adsorvida hepatite A (inativada),146778
+29,Penta acelular,"vacina adsorvida difteria, tétano, pertussis (acelular), poliomielite 1, 2 e 3 (inativada) e Haemophilus influenzae B (conjugada)",139402
+99,COV19-RNAm-PED,vacina covid-19,124066
+36,SR,"vacina sarampo, rubéola (atenuada)",121989
+82,Dengue,"vacina dengue 1, 2, 3 e 4 (recombinante e atenuada)",100332
+109,VVSR-RecAdj,"vacina vírus sincicial respiratório (recombinante, adjuvada)",87082
+103,COVID-19 PFIZER - BI,vacina covid-19 bivalente,73965
+58,DTPa/VIP,"vacina adsorvida difteria, tétano, pertussis (acelular), poliomielite 1, 2 e 3 (inativada)",59518
+23,IGHAR,imunoglobulina humana antirrábica,58367
+110,INF4-alta dosagem,"vacina influenza tetravalente (fragmentada, inativada)",57250
+76,VHZ,vacina herpes-zóster (atenuada),56853
+44,INFH1N1-2009,"vacina influenza tipo A (H1N1) (inativada, fragmentada)",47968
+72,INFH1N1-2009-2,"vacina influenza tipo A (H1N1) (inativada, fragmentada)",44907
+35,HA virossomal,vacina adsorvida hepatite A (virossomal),33436
+63,HA-HBad,vacina adsorvida hepatite A e hepatite B (recombinante),25939
+47,DTPa,"vacina adsorvida difteria, tétano e pertussis (acelular)",24603
+7,SAR,soro antirrábico,20918
+2,SAT,soro antitetânico,17011
+111,dTpa/VIP,"vacina adsorvida difteria, tétano, pertussis (acelular), poliomielite 1, 2 e 3 (inativada)",12047
+100,VVS,vacina varíola símia (atenuada),11944
+8,SABR,soro antibotrópico (pentavalente),8873
+116,"NIRSEVIMABE 1,0ml","nirsevimabe 1,0ml",8783
+1,IGHAT,imunoglobulina humana antitétano,8528
+28,VOPb,vacina poliomielite 1 e 3 (atenuada),8347
+30,FTp,vacina febre tifóide (polissacarídica),7167
+5,DT,vacina adsorvida difteria e tétano infantil,5558
+4,SAESC,soro antiescorpiônico,5207
+20,IGHAHB,imunoglobulina humana anti-hepatite B,5166
+18,VR-EG,vacina raiva (inativada),4146
+115,"NIRSEVIMABE 0,5ml","nirsevimabe 0,5ml",2996
+86,COV-19 SINO/BUTAN-CO,vacina adsorvida covid-19 (inativada),2212
+66,MenBC,vacina meningocócica BC (polissacarídica),2074
+61,Tétano,vacina tétano (inativada),1856
+3,SAAR,"soro antiaracnídico (Loxosceles, Phoneutria, Tityus)",1780
+64,INF3-ID,"vacina influenza trivalente (fragmentada, inativada) intradérmica",1654
+62,HA-HBinf,vacina adsorvida hepatite A e hepatite B (recombinante),1587
+73,SCRV-2,"vacina sarampo, caxumba, rubéola e varicela (atenuada)",1464
+16,SAC,soro anticrotálico,1176
+60,HPV2,vacina papilomavírus humano 16 e 18 (recombinante),1042
+39,Tetra,"vacina adsorvida difteria, tétano, pertussis e Haemophilus influenzae B (conjugada)",1030
+19,IGHAVZ,imunoglobulina humana antivaricela,892
+51,Fta,vacina febre tifóide (atenuada),821
+105,COVID-19-SPIKEVAX BI,vacina covid-19 bivalente (recombinante),526
+88,COV19-Ad26,vacina covid-19 (recombinante),455
+85,COV-19 AST/FIO-CVISH,vacina covid-19 (recombinante),417
+12,SABL,soro antibotrópico (pentavalente) e antilaquético,396
+84,VFA-F,vacina febre amarela (atenuada),384
+70,Sarampo,vacina sarampo (atenuada),384
+11,SABC,soro antibotrópico (pentavalente) e anticrotálico,383
+68,HPV2-2,vacina papilomavírus humano 16 e 18 (recombinante),350
+89,COV-19 AST-ChAdOx1-S,vacina covid-19 (recombinante),338
+48,DILSCR,"diluente para vacina sarampo, caxumba, rubéola (atenuada)",241
+95,COV19-Sput,vacina covid-19 (recombinante),227
+98,COVID-19 SINOVAC,vacina adsorvida covid-19 (inativada),181
+91,DILVR emb de galinha,diluente para vacina raiva (inativada),147
+114,COVID-19 SINOPHARM,vacina covid-19 (inativada),102
+69,SAB,soro antibotulínico AB (bivalente),97
+6,SAELA,soro antielapídico (bivalente),86
+13,MenAC,vacina meningocócica AC (polissacarídica),51
+90,DILSCRV,"diluente para vacina sarampo, caxumba, rubéola e varicela (atenuada)",43
+113,CHIKUNGUNYA,vacina chikungunya (recombinante e atenuada),38
+40,VPC7,vacina pneumocócica 7-valente (conjugada),33
+75,VCO,vacina cólera (inativada),28
+71,Rubéola,vacina rubéola (atenuada),27
+32,SALON,soro antilonômico,26
+53,DILSR,"diluente para vacina sarampo, rubéola (atenuada)",26
+49,DILVFA,diluente para vacina febre amarela (atenuada),24
+31,SALOX,soro antiloxoscélico (trivalente),21
+96,COV19-Cova,vacina adsorvida covid-19 (inativada),20
+50,DILHib,diluente para vacina Haemophilus influenzae B (conjugada),18
+117,INF3-alta dosagem,"vacina influenza trivalente (fragmentada, inativada)",14
+92,VR-2,vacina raiva (inativada),13
+81,DILMenC,diluente para vacina meningocócica C (conjugada),11
+54,DILVAR,diluente para vacina varicela (atenuada),9
+79,DILBCG,diluente para vacina BCG,8
+10,SAD,soro antidiftérico,8
+38,SBOTULTRI,soro antibotulínico (trivalente),2

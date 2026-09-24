@@ -1,0 +1,8 @@
+﻿indicador,quantidade,tratamento
+Registros inicialmente lidos,178451615,Mantidos; a fonte original não é alterada.
+Duplicidades detectadas nos blocos,0,Identificadas para avaliação; não removidas da fonte.
+Datas ausentes,0,Mantidas e ignoradas apenas nos cálculos dependentes de data.
+Datas inválidas,0,Convertidas para valor inválido/NaT nas análises.
+Idades ausentes,0,Mantidas; ignoradas apenas nas estatísticas de idade.
+Idades inválidas,1056,Não utilizadas nas estatísticas; intervalo válido adotado: 0 a 120.
+Registros com dt_deletado_rnds preenchida,0,Sinalizados como indicador de qualidade; não removidos automaticamente.
