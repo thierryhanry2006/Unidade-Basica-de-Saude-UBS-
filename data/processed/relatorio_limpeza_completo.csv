@@ -1,0 +1,13 @@
+﻿mes,arquivo,registros_lidos,datas_invalidas,idades_ausentes,idades_invalidas,registros_sem_campos_essenciais,duplicidades_detectadas_nos_blocos,registros_selecionados_para_base_preparada
+abr,vacinacao_abr_2025.csv,25913391,0,0,324,0,0,5000
+ago,vacinacao_ago_2025.csv,11244935,0,0,45,0,0,5000
+dez,vacinacao_dez_2025.csv,9406688,0,0,35,0,0,5000
+fev,vacinacao_fev_2025.csv,9334511,0,0,46,0,0,5000
+jan,vacinacao_jan_2025.csv,12062476,0,0,52,0,0,5000
+jul,vacinacao_jul_2025.csv,15226105,0,0,46,0,0,5000
+jun,vacinacao_jun_2025.csv,20466802,0,0,110,0,0,5000
+mai,vacinacao_mai_2025.csv,32666708,0,0,286,0,0,5000
+mar,vacinacao_mar_2025.csv,9712072,0,0,31,0,0,5000
+nov,vacinacao_nov_2025.csv,10839981,0,0,37,0,0,5000
+out,vacinacao_out_2025.csv,9973489,0,0,14,0,0,5000
+set,vacinacao_set_2025.csv,11604457,0,0,30,0,0,5000

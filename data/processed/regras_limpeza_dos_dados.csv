@@ -1,0 +1,12 @@
+﻿etapa,tratamento
+Dados originais,Arquivos de data/raw preservados sem alteração.
+Leitura,CSV lido em chunks de 200.000 registros.
+Texto,Espaços externos removidos; strings vazias e marcadores de ausência normalizados.
+Sexo/UF,Valores textuais padronizados em letras maiúsculas.
+Data,dt_vacina convertida para data; datas inválidas não entram na base preparada.
+Idade,nu_idade_paciente convertida para número; somente 0 a 120 anos entram na base preparada.
+Campos essenciais,Registros sem os campos essenciais definidos foram excluídos da base preparada.
+Duplicidades,Duplicidades detectadas dentro dos chunks foram retiradas da base preparada durante o processamento.
+Outliers,Valores acima do limite do IQR são sinalizados em flag_outlier_idade; não são apagados automaticamente.
+Privacidade/versionamento,Identificadores de paciente não são gravados na base preparada para o GitHub.
+Volume,"A base preparada do GitHub contém até 5.000 registros válidos por mês, total máximo de 60.000."

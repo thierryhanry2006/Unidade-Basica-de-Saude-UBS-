@@ -1,0 +1,14 @@
+﻿indicador,valor
+Registros lidos nos 12 arquivos,178451615.0
+Datas inválidas identificadas,0.0
+Idades ausentes identificadas,0.0
+Idades inválidas identificadas,1056.0
+Registros sem campos essenciais,0.0
+Duplicidades detectadas nos chunks,0.0
+Idades válidas para estatísticas,178450559.0
+Q1,1.0
+Q3,45.0
+IQR,44.0
+Limite inferior de outlier,-65.0
+Limite superior de outlier,111.0
+Registros na base preparada para GitHub,59994.0

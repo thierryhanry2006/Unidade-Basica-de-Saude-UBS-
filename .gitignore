@@ -14,3 +14,7 @@ data/raw/
 # Arquivos temporÃ¡rios
 *.tmp
 *.temp
+# Banco auxiliar da verificação de duplicidades
+*.sqlite
+
+data/clean/
