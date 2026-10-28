@@ -1,0 +1,8 @@
+﻿indicador,valor
+registros_originais,59994
+registros_sem_alvo_ausente_apos_limpeza,59994
+outliers_de_idade_excluidos,0
+registros_de_classes_com_frequencia_menor_que_20_excluidos,120
+registros_usados_na_modelagem,59874
+quantidade_de_classes_usadas,46
+idade_ausente_a_ser_imputada,0
