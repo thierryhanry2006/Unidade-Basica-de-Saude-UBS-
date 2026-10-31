@@ -57,20 +57,20 @@ O MVP definido para o projeto tem como foco o registro assistido do histórico v
 Fluxo previsto:
 
 Caderneta/cartão
-      ||
-      \/
-      OCR
-      ||
-      \/
+||
+/
+OCR
+||
+/
 Identificação dos dados
-      ||
-      \/
+||
+/
 Conferência pelo profissional
-      ||
-      \/
+||
+/
 Registro digital estruturado
-      ||
-      \/
+||
+/
 Consulta do histórico
 
 Os principais campos considerados no MVP são:
@@ -644,20 +644,20 @@ Os resultados da análise ajudam a compreender quais informações precisam esta
 A relação principal utilizada pelo projeto pode ser representada como:
 
 Vacina
-  ||
-  \/
+||
+/
 Dose
-  ||
-  \/
+||
+/
 Data
-  ||
-  \/
+||
+/
 Idade / Grupo
-  ||
-  \/
+||
+/
 Histórico
-  ||
-  \/
+||
+/
 Próxima orientação
 
 No MVP, o OCR poderá auxiliar na transformação das informações presentes em uma caderneta física em dados estruturados.
@@ -796,3 +796,351 @@ https://dadosabertos.saude.gov.br/dataset/doses-aplicadas-pelo-programa-de-nacio
 BRASIL. Ministério da Saúde. API de Dados Abertos – Vacinação. Brasília: Ministério da Saúde.
 
 BRASIL. Ministério da Saúde. Programa Nacional de Imunizações – PNI. Brasília: Ministério da Saúde.
+
+\---
+
+
+
+\# TED 03 – MODELAGEM PREDITIVA E MACHINE LEARNING
+
+
+
+## 28. Definição do problema
+
+
+
+Foi desenvolvido um experimento de aprendizado de máquina para classificar o imunobiológico registrado em um atendimento de vacinação. O problema foi definido como classificação multiclasse supervisionada.
+
+
+
+A variável-alvo foi `sg_imunobiologico`. O experimento é técnico e exploratório e não foi desenvolvido para recomendar vacinas ou orientar decisões clínicas.
+
+
+
+## 29. Variáveis utilizadas
+
+
+
+| Variável | Descrição |
+
+|---|---|
+
+| `nu_idade_paciente` | Idade do paciente |
+
+| `tp_sexo_paciente` | Sexo do paciente |
+
+| `ds_tipo_dose` | Tipo de dose registrada |
+
+| `mes_vacinacao` | Mês da vacinação |
+
+| `sg_uf_paciente` | Unidade federativa |
+
+
+
+A variável-alvo foi `sg_imunobiologico`. As variáveis `co_vacina` e `ds_nome` não foram utilizadas como características de entrada.
+
+
+
+## 30. Preparação dos dados
+
+
+
+A amostra inicial continha 59.994 registros. Após a preparação, foram obtidos os seguintes resultados:
+
+
+
+| Indicador | Resultado |
+
+|---|---:|
+
+| Registros originais | 59.994 |
+
+| Registros sem alvo ausente | 59.994 |
+
+| Outliers de idade excluídos | 0 |
+
+| Registros de classes com menos de 20 ocorrências | 120 |
+
+| Registros utilizados na modelagem | 59.874 |
+
+| Classes utilizadas | 46 |
+
+| Valores de idade ausentes | 0 |
+
+
+
+A principal redução ocorreu pela retirada de 120 registros pertencentes a classes com menos de 20 ocorrências. Embora o pipeline tenha sido configurado para imputar a idade pela mediana, não foi necessário preencher valores ausentes nessa execução.
+
+
+
+## 31. Divisão dos dados
+
+
+
+| Conjunto | Quantidade | Proporção |
+
+|---|---:|---:|
+
+| Treinamento | 47.899 | 80% |
+
+| Teste | 11.975 | 20% |
+
+| Total | 59.874 | 100% |
+
+
+
+A divisão foi estratificada e utilizou `random_state=42`. A validação cruzada foi realizada com três divisões estratificadas, utilizando uma amostra de 15.000 registros do conjunto de treinamento.
+
+
+
+## 32. Pré-processamento e algoritmos
+
+
+
+Para a idade, foram configuradas imputação pela mediana e padronização com `StandardScaler`.
+
+
+
+Para as variáveis categóricas, foram configuradas imputação pela categoria mais frequente e codificação com `OneHotEncoder`, utilizando `handle_unknown="ignore"`.
+
+
+
+Foram avaliados:
+
+
+
+\- Árvores de decisão com profundidades máximas de 5, 10 e 15.
+
+\- KNN com 3, 5 e 7 vizinhos.
+
+\- Random Forest com 120 árvores, profundidade máxima de 20, mínimo de 2 amostras por folha e balanceamento de classes.
+
+\- DummyClassifier como modelo de referência.
+
+
+
+## 33. Métricas de avaliação
+
+
+
+Foram utilizadas acurácia, precisão macro, recall macro e F1-score macro. As métricas macro permitem observar o desempenho das classes sem dar maior peso às categorias que possuem mais registros.
+
+
+
+## 34. Resultados da validação cruzada
+
+
+
+| Modelo | Acurácia | Precisão macro | Recall macro | F1 macro |
+
+|---|---:|---:|---:|---:|
+
+| Random Forest – 120 árvores | 0,4828 | 0,2806 | 0,3304 | 0,2875 |
+
+| Decision Tree – profundidade 15 | 0,4127 | 0,2864 | 0,3141 | 0,2663 |
+
+| Decision Tree – profundidade 10 | 0,3602 | 0,2813 | 0,3136 | 0,2401 |
+
+| KNN – 7 vizinhos | 0,4637 | 0,2304 | 0,2168 | 0,2200 |
+
+| KNN – 5 vizinhos | 0,4484 | 0,2189 | 0,2081 | 0,2108 |
+
+| KNN – 3 vizinhos | 0,4240 | 0,2138 | 0,2001 | 0,2031 |
+
+| Decision Tree – profundidade 5 | 0,1811 | 0,1130 | 0,2023 | 0,1071 |
+
+
+
+O Random Forest apresentou o maior F1-score macro na validação cruzada, com 0,2875, sendo selecionado para a avaliação final.
+
+
+
+## 35. Avaliação no conjunto de teste
+
+
+
+| Métrica | DummyClassifier | Random Forest |
+
+|---|---:|---:|
+
+| Acurácia | 0,2489 | 0,4760 |
+
+| Precisão macro | 0,0054 | 0,3037 |
+
+| Recall macro | 0,0217 | 0,3824 |
+
+| F1 macro | 0,0087 | 0,3120 |
+
+
+
+O Random Forest apresentou desempenho superior ao modelo de referência em todas as métricas avaliadas. Sua acurácia foi de 47,60% e seu F1-score macro foi de 0,3120.
+
+
+
+## 36. Análise da matriz de confusão
+
+
+
+Entre os 11.975 registros do conjunto de teste, o modelo classificou corretamente 5.700 registros e errou 6.275.
+
+
+
+| Indicador | Resultado |
+
+|---|---:|
+
+| Registros avaliados | 11.975 |
+
+| Classificações corretas | 5.700 |
+
+| Classificações incorretas | 6.275 |
+
+| Acurácia | 47,60% |
+
+
+
+Alguns exemplos de taxas de acerto foram:
+
+
+
+| Classe | Registros reais | Acertos | Taxa de acerto |
+
+|---|---:|---:|---:|
+
+| DTP | 330 | 316 | 95,8% |
+
+| DNG | 337 | 307 | 91,1% |
+
+| HPV4 | 261 | 195 | 74,7% |
+
+| VZ | 234 | 170 | 72,6% |
+
+| INF3 | 2.981 | 1.981 | 66,5% |
+
+| VIP | 836 | 99 | 11,8% |
+
+| MenC | 366 | 43 | 11,7% |
+
+
+
+Também foram observadas confusões entre classes: 249 registros reais de INF3 foram classificados como HPV4; 155 registros de Penta como ROTA; 151 de VPC10 como ROTA; 138 de VIP como ROTA; e 121 de dT como HB.
+
+
+
+O desempenho variou bastante entre as classes. O modelo reconheceu algumas categorias com maior facilidade, mas apresentou dificuldades para diferenciar outras.
+
+
+
+## 37. Interpretação e limitações
+
+
+
+O Random Forest foi o melhor algoritmo entre os avaliados, mas o desempenho não foi uniforme. As principais limitações foram o desbalanceamento das classes, a confusão entre categorias e a utilização de uma base nacional que não representa especificamente os pacientes da UBS Centenário.
+
+
+
+O modelo ainda não apresenta confiabilidade suficiente para uso operacional ou clínico. A classificação não deve substituir a leitura dos documentos, a conferência profissional ou os protocolos oficiais de vacinação.
+
+
+
+## 38. Relação com o projeto VACINA
+
+
+
+O experimento demonstrou que é possível utilizar informações estruturadas dos registros de vacinação para treinar modelos de classificação. Entretanto, o desempenho obtido ainda não permite utilizar o classificador como ferramenta automática confiável.
+
+
+
+No MVP, a prioridade continua sendo a digitalização e a organização das informações, com conferência humana dos dados extraídos. O modelo pode ser estudado futuramente, desde que seja submetido a novas avaliações e validado com dados adequados.
+
+
+
+## 39. Arquivos e execução da TED 03
+
+
+
+O script principal está localizado em:
+
+
+
+`notebook/TED3/ted03_modelagem.py`
+
+
+
+O arquivo de dados utilizado é:
+
+
+
+`data/processed/PNI_2025_preparado_github.csv`
+
+
+
+Os resultados estão organizados em:
+
+
+
+`data/processed/TED3_resultados/`
+
+
+
+Entre os arquivos gerados estão a comparação da validação cruzada, a matriz de confusão, as métricas de teste, o relatório de classificação, o resumo da preparação, a distribuição das classes e o gráfico dos principais imunobiológicos.
+
+
+
+Para instalar as bibliotecas utilizadas, execute:
+
+
+
+```powershell
+
+python -m pip install pandas numpy matplotlib scikit-learn
+
+```
+
+
+
+Com o ambiente virtual ativado e a partir da pasta principal do projeto, execute:
+
+
+
+```powershell
+
+python notebook/TED3/ted03_modelagem.py
+
+```
+
+
+
+## 40. Repositório e publicação
+
+
+
+O código da modelagem e os resultados do TED 03 foram publicados no repositório do projeto:
+
+
+
+https://github.com/thierryhanry2006/Unidade-Basica-de-Saude-UBS-
+
+
+
+A base preparada `PNI_2025_preparado_github.csv`, utilizada na modelagem, também está disponível no repositório.
+
+
+
+## 41. Conclusão da TED 03
+
+
+
+A terceira etapa permitiu estudar e comparar diferentes algoritmos de aprendizado de máquina aplicados aos registros nacionais de vacinação.
+
+
+
+O Random Forest apresentou o melhor resultado na validação cruzada, com F1-score macro de 0,2875. Na avaliação final, alcançou acurácia de 47,60% e F1-score macro de 0,3120.
+
+
+
+A matriz de confusão mostrou diferenças importantes de desempenho entre as classes. Os resultados representam uma etapa de aprendizado e avaliação técnica, não uma solução clínica pronta.
+
+
+
+Para o projeto VACINA, a aplicação mais adequada neste momento é continuar priorizando a digitalização, a organização dos registros e a conferência humana das informações.
