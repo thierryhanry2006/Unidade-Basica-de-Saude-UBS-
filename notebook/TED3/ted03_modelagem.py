@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.dummy import DummyClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import (
     accuracy_score,
@@ -245,6 +246,28 @@ def main() -> int:
                 ),
             )
         )
+      # Modelo Random Forest
+    candidates.append(
+        (
+            "RandomForest_120_arvores",
+            Pipeline(
+                steps=[
+                    ("preparacao", preprocessor),
+                    (
+                        "modelo",
+                        RandomForestClassifier(
+                            n_estimators=120,
+                            max_depth=20,
+                            min_samples_leaf=2,
+                            class_weight="balanced_subsample",
+                            random_state=RANDOM_STATE,
+                            n_jobs=-1,
+                        ),
+                    ),
+                ]
+            ),
+        )
+    )
 
     cv_rows = []
     fitted_candidates = {}
@@ -252,8 +275,7 @@ def main() -> int:
     print(f"Classes consideradas: {y.nunique()}")
     print(f"Treino: {len(X_train):,} | teste reservado: {len(X_test):,}".replace(",", "."))
     print(f"Validação cruzada: {n_splits} dobras em {len(X_cv):,} registros do treino".replace(",", "."))
-    print("\nIniciando comparação por validação cruzada. O K-NN pode demorar mais...\n")
-
+    print("\nIniciando comparação por validação cruzada. KNN e Random Forest podem demorar mais...\n")
     for name, pipeline in candidates:
         print(f"Avaliando {name}...")
         with warnings.catch_warnings():
