@@ -1,0 +1,25 @@
+{
+  "perguntas": [
+    {
+      "id": "documentos",
+      "pergunta": "O que levar para tomar vacina?",
+      "resposta": "Leve um documento de identificação com foto, CPF ou Cartão do SUS e, principalmente, a caderneta/carteira de vacinação."
+    },
+    {
+      "id": "carteira_perdida",
+      "pergunta": "Perdi minha carteira de vacinação, o que faço?",
+      "resposta": "Compareça presencialmente à sala de vacina da UBS Centenário com seu documento de identificação e Cartão do SUS para que a equipe verifique seus registros no sistema."
+    },
+    {
+      "id": "local_horario",
+      "pergunta": "Onde fica e qual o horário da UBS Centenário?",
+      "resposta": "A UBS Centenário fica localizada no bairro Juá, em Riachão - MA. Para confirmar os horários de funcionamento da sala de vacina, procure a recepção da unidade. [Texto pendente de validação com a UBS]"
+    },
+    {
+      "id": "duvida_clinica",
+      "pergunta": "Tenho dúvidas sobre reações ou se posso tomar a vacina",
+      "resposta": "Orientações sobre casos clínicos, febre, alergias ou contraindicações são exclusivas da equipe de saúde. Por favor, procure diretamente a sala de vacina da UBS Centenário."
+    }
+  ],
+  "contato_unidade": "Para falar com a unidade, compareça presencialmente à sala de vacina da UBS Centenário, no bairro Juá, em Riachão - MA. Recepção: [INSERIR TELEFONE/CONTATO OFICIAL]."
+}

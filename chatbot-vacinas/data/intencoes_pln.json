@@ -1,0 +1,46 @@
+{
+  "limiar_confianca": 0.25,
+  "exemplos": [
+    {
+      "intencao": "proxima_dose",
+      "frases": [
+        "Quando tomo a próxima dose?",
+        "Quando devo tomar a próxima dose da vacina?",
+        "Qual é a data da próxima dose?",
+        "Quero saber quando devo voltar para vacinar.",
+        "Calcular a próxima dose da minha vacina.",
+        "Quando será meu próximo reforço?",
+        "Preciso saber a data da próxima vacina.",
+        "Quando tenho que tomar outra dose?"
+      ]
+    },
+    {
+      "intencao": "faq",
+      "frases": [
+        "Quero ver as perguntas frequentes.",
+        "Tenho uma dúvida sobre vacinação.",
+        "O que devo levar para tomar vacina?",
+        "Perdi minha carteira de vacinação, o que faço?",
+        "Onde fica e qual o horário da UBS Centenário?",
+        "Tenho dúvidas sobre reações ou se posso tomar a vacina.",
+        "Quais são as dúvidas frequentes?",
+        "Tive febre depois da vacina.",
+        "Estou com febre, posso tomar vacina?",
+        "Tive uma reação depois de tomar vacina.",
+        "Tenho alergia, posso receber a vacina?",
+        "Tenho uma contraindicação e quero saber se posso vacinar."
+      ]
+    },
+    {
+      "intencao": "falar_com_unidade",
+      "frases": [
+        "Quero falar com a unidade.",
+        "Como faço para entrar em contato com a UBS?",
+        "Preciso falar com a sala de vacina.",
+        "Quero o telefone da UBS Centenário.",
+        "Como entro em contato com a recepção?",
+        "Preciso falar com alguém da unidade."
+      ]
+    }
+  ]
+}

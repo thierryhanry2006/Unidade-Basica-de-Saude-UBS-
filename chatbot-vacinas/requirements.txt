@@ -1,0 +1,6 @@
+python-telegram-bot>=21,<23
+python-dateutil>=2.9,<3
+scikit-learn>=1.5,<2
+APScheduler>=3.10,<4
+pytest>=8,<10
+pytz>=2024.1,<2027

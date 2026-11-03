@@ -1,0 +1,170 @@
+{
+  "versao_schema": 1,
+  "referencia_calendario": "Calendário Nacional de Vacinação (PNI)",
+  "status_validacao_clinica": "pendente_ubs",
+  "liberado_para_uso_em_producao": false,
+  "fonte_oficial": {
+    "orgao": "Ministério da Saúde do Brasil",
+    "url": "https://www.gov.br/saude/pt-br/vacinacao",
+    "observacao": "Página oficial geral consultada; não contém a tabela técnica detalhada dos esquemas abaixo. Confirmar doses, intervalos e limites etários com a equipe da sala de vacina da UBS Centenário antes de qualquer uso clínico."
+  },
+  "orientacao_segura": {
+    "aviso_obrigatorio": "Esta informação é meramente informativa. A confirmação final deve ser feita pela equipe da sala de vacina da UBS Centenário.",
+    "fora_do_escopo": "Não foi possível determinar a orientação com as regras cadastradas. Procure diretamente a sala de vacina da UBS Centenário para avaliação da carteira."
+  },
+  "regras_de_escopo": {
+    "idade_fora_dos_limites": "encaminhar_para_ubs",
+    "historico_incompleto_ou_inconsistente": "encaminhar_para_ubs",
+    "esquema_nao_cadastrado": "encaminhar_para_ubs",
+    "observacao": "Não inferir doses ausentes, atrasos, contraindicações, esquemas especiais ou condutas de resgate. Esses casos exigem avaliação da equipe da UBS."
+  },
+  "vacinas": [
+    {
+      "id": "pentavalente",
+      "nome": "Pentavalente",
+      "publico": "infantil",
+      "idade_minima_meses": 0,
+      "idade_maxima_meses_exclusiva": 60,
+      "esquema": {
+        "tipo": "serie_primaria_por_intervalo",
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 2,
+            "intervalo_recomendado_dias": 0,
+            "intervalo_minimo_dias": 0
+          },
+          {
+            "numero": 2,
+            "idade_alvo_meses": 4,
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          },
+          {
+            "numero": 3,
+            "idade_alvo_meses": 6,
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          }
+        ],
+        "doses_adicionais": [],
+        "observacao": "Esquema de rotina preliminar. Atrasos, doses anteriores a idade/intervalo recomendado e esquemas de resgate devem ser encaminhados à UBS."
+      }
+    },
+    {
+      "id": "vip",
+      "nome": "Poliomielite inativada (VIP)",
+      "publico": "infantil",
+      "idade_minima_meses": 0,
+      "idade_maxima_meses_exclusiva": 60,
+      "esquema": {
+        "tipo": "serie_primaria_com_reforco",
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 2,
+            "intervalo_recomendado_dias": 0,
+            "intervalo_minimo_dias": 0
+          },
+          {
+            "numero": 2,
+            "idade_alvo_meses": 4,
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          },
+          {
+            "numero": 3,
+            "idade_alvo_meses": 6,
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          }
+        ],
+        "doses_adicionais": [
+          {
+            "numero": 4,
+            "tipo": "reforco",
+            "recorrente": false,
+            "idade_alvo_meses": 15,
+            "intervalo_recomendado_dias": 270,
+            "intervalo_minimo_dias": 180
+          }
+        ],
+        "observacao": "Esquema de rotina preliminar. Reforço e intervalos devem ser confirmados com a UBS; atrasos ou histórico incompleto não são calculados automaticamente."
+      }
+    },
+    {
+      "id": "hepatite_b",
+      "nome": "Hepatite B",
+      "publico": "a partir de 7 anos",
+      "idade_minima_anos": 7,
+      "idade_maxima_anos": null,
+      "esquema": {
+        "tipo": "serie_primaria_por_intervalo",
+        "doses": [
+          {
+            "numero": 1,
+            "marco": "dose_inicial",
+            "intervalo_recomendado_dias": 0,
+            "intervalo_minimo_dias": 0
+          },
+          {
+            "numero": 2,
+            "marco": "apos_dose_1",
+            "intervalo_recomendado_dias": 30,
+            "intervalo_minimo_dias": 30
+          },
+          {
+            "numero": 3,
+            "marco": "apos_dose_2",
+            "intervalo_recomendado_dias": 150,
+            "intervalo_minimo_dias": 60,
+            "intervalo_minimo_desde_dose_1_dias": 120
+          }
+        ],
+        "doses_adicionais": [],
+        "observacao": "Série preliminar de três doses; não inferir esquema completo ou necessidade de doses adicionais sem histórico confiável e avaliação da UBS."
+      }
+    },
+    {
+      "id": "dt",
+      "nome": "Dupla Adulto (dT)",
+      "publico": "a partir de 7 anos",
+      "idade_minima_anos": 7,
+      "idade_maxima_anos": null,
+      "esquema": {
+        "tipo": "serie_primaria_com_reforco",
+        "doses": [
+          {
+            "numero": 1,
+            "marco": "dose_inicial",
+            "intervalo_recomendado_dias": 0,
+            "intervalo_minimo_dias": 0
+          },
+          {
+            "numero": 2,
+            "marco": "apos_dose_1",
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          },
+          {
+            "numero": 3,
+            "marco": "apos_dose_2",
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          }
+        ],
+        "doses_adicionais": [
+          {
+            "numero": 4,
+            "tipo": "reforco",
+            "recorrente": true,
+            "intervalo_recomendado_dias": 3650,
+            "intervalo_recomendado_anos": 10,
+            "observacao": "O valor em dias é apenas uma aproximação para testes; calcular dez anos-calendário com dateutil e validar a regra clínica antes do uso."
+          }
+        ],
+        "observacao": "Série e reforço preliminares. Situações especiais, ferimentos, esquema anterior incompleto ou dose atrasada devem ser encaminhados à UBS."
+      }
+    }
+  ]
+}
