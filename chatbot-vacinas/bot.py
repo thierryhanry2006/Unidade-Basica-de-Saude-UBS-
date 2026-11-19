@@ -502,7 +502,12 @@ def main() -> None:
     if not token:
         raise RuntimeError("Defina a variável de ambiente TELEGRAM_BOT_TOKEN.")
 
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
+    # O httpx registra a URL completa da API do Telegram, que contém o token.
+    logging.getLogger("httpx").setLevel(logging.WARNING)
     criar_aplicacao(token).run_polling()
 
 

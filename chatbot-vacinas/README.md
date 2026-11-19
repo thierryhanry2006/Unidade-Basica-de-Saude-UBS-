@@ -95,18 +95,23 @@ na inicialização seguinte, não enviados retroativamente.
 
 ## Iniciar e testar localmente
 
-No PowerShell, na pasta do projeto:
+No PowerShell, na pasta `chatbot-vacinas`:
 
 ```powershell
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
 $tokenSeguro = Read-Host "Cole o token do BotFather" -AsSecureString
 $env:TELEGRAM_BOT_TOKEN = [System.Net.NetworkCredential]::new("", $tokenSeguro).Password
 $env:VACINA_MODO_TESTE = "1"
 python bot.py
 ```
 
-Mantenha o terminal aberto para o polling e os lembretes. Não compartilhe o
-token e use somente dados fictícios durante os testes.
+O `Read-Host` não pede senha: ele espera o token do BotFather colado
+(Ctrl+V ou botão direito) e o oculta na tela. Mantenha o terminal aberto para
+o polling e os lembretes. Não compartilhe o token e use somente dados
+fictícios durante os testes.
+
+`requirements.txt` contém apenas as dependências de execução (usadas no
+deploy); `requirements-dev.txt` acrescenta o pytest.
 
 Para executar a suíte automatizada:
 
@@ -114,11 +119,35 @@ Para executar a suíte automatizada:
 python -m pytest -q
 ```
 
-## Estado local observado ao escrever este guia
+## Hospedagem para demonstração (Railway)
 
-- Não foi encontrado processo `python.exe` executando o bot durante a
-  verificação. O bot só está ativo quando `python bot.py` permanece rodando.
-- O arquivo `data/lembretes.sqlite3` existe, mas a tabela não tinha registros
-  por status no momento da verificação.
-- A presença do arquivo SQLite não significa que o bot ou o agendador estejam
-  atualmente ativos.
+O bot roda como um processo contínuo (polling + agendador), em uma única
+instância, com o SQLite em um volume persistente. O `Dockerfile` desta pasta
+gera a imagem (Python 3.13) e já define `VACINA_DB_PATH=/data/lembretes.sqlite3`.
+
+1. Crie uma conta em https://railway.com e conecte sua conta do GitHub.
+2. **New Project → Deploy from GitHub repo** e escolha este repositório.
+3. No serviço criado, em **Settings**:
+   - **Root Directory**: `chatbot-vacinas`
+   - **Branch**: a branch que será demonstrada (por exemplo, `dev`).
+   - Não gere domínio público: o bot não recebe acessos HTTP.
+4. Em **Variables**, adicione:
+   - `TELEGRAM_BOT_TOKEN` = token do BotFather
+   - `VACINA_MODO_TESTE` = `1` (enquanto as regras não forem validadas)
+5. Clique com o botão direito no serviço → **Attach Volume** e use o
+   mount path `/data`. Sem o volume, os lembretes são apagados a cada deploy.
+6. Faça o deploy e acompanhe em **Deployments → View logs**. A inicialização
+   correta mostra `Application started`.
+
+Cuidados:
+
+- Mantenha **uma única réplica** e **não rode o bot localmente com o mesmo
+  token** enquanto ele estiver no Railway: duas instâncias fazendo polling geram
+  erro `Conflict` no Telegram e podem duplicar lembretes. Para testar
+  localmente, crie um segundo bot no BotFather.
+- O token nunca deve ir para o código ou para o Git; apenas para as variáveis
+  do Railway. Os logs do `httpx` (que exibiriam o token na URL) são silenciados
+  em `bot.py`.
+- Cada push na branch configurada dispara um novo deploy automaticamente.
+- Esta configuração serve para demonstração. Uso com pacientes reais exige
+  backup do SQLite, monitoramento e, de preferência, servidor no Brasil.
