@@ -1,4 +1,4 @@
-VACINA – Digitalização do Histórico Vacinal e Lembretes Automáticos para a UBS Centenário
+VACINA – Chatbot de Orientação Vacinal e Lembretes Automáticos para a UBS Centenário
 
 Projeto desenvolvido nas disciplinas de Inteligência Artificial e Big Data e Ciência de Dados, tendo como referência a realidade da UBS Centenário, localizada no bairro Juá, em Riachão – Maranhão.
 
@@ -18,74 +18,56 @@ Ano: 2026
 
 1. Sobre o projeto
 
-O projeto surgiu a partir de uma situação observada na sala de vacinação da UBS Centenário. A unidade já utiliza recursos digitais para registrar parte dos atendimentos e das vacinações, mas ainda podem existir registros antigos somente em carteiras ou cadernetas físicas.
+O projeto surgiu a partir de uma situação observada na sala de vacinação da UBS Centenário. Muitas pessoas não sabem quando devem retornar para a próxima dose de uma vacina, esquecem a data prevista ou precisam ir até a unidade apenas para tirar dúvidas simples sobre vacinação.
 
-Quando essas informações não estão digitalizadas, a consulta do histórico pode ficar mais demorada, principalmente quando é necessário verificar quais vacinas já foram aplicadas, quais doses foram registradas e quais informações ainda precisam ser atualizadas.
-
-A proposta do projeto é facilitar a digitalização, a organização e a consulta desse histórico, diminuindo a dependência de registros exclusivamente físicos.
+A proposta do projeto é oferecer um chatbot que oriente a população sobre a próxima dose, responda perguntas frequentes e envie lembretes automáticos antes da data prevista, reduzindo atrasos e a demanda por informações básicas na sala de vacina.
 
 2. Problema identificado
 
 O problema definido para o projeto é:
 
-Como facilitar a digitalização, organização e consulta do histórico de vacinação dos pacientes da UBS Centenário, reduzindo a dependência de registros exclusivamente físicos?
-
-A situação pode ocorrer quando uma pessoa possui informações antigas em uma caderneta que ainda não foram inseridas no sistema utilizado pela unidade. Além disso, documentos físicos podem ser perdidos, danificados ou apresentar informações difíceis de consultar.
+Como orientar os pacientes da UBS Centenário sobre suas próximas doses de vacina e lembrá-los das datas previstas, de forma simples e acessível?
 
 3. Solução proposta
 
-A solução prevê a transformação de informações antigas das cadernetas de vacinação em registros digitais estruturados.
+A solução é um chatbot no Telegram com os seguintes recursos:
 
-Entre os recursos planejados estão:
+cálculo da data prevista da próxima dose a partir da data de nascimento, da vacina, da última dose recebida e da data dessa dose;
 
-uso de OCR para auxiliar na leitura de informações presentes em cartões e cadernetas;
+motor de regras determinístico baseado no Calendário Nacional de Vacinação (PNI), que encaminha à UBS todo caso fora do esquema cadastrado;
 
-organização dos dados em campos estruturados;
+classificação da intenção das mensagens em texto livre (Processamento de Linguagem Natural);
 
-conferência das informações reconhecidas antes da confirmação do cadastro;
+respostas às perguntas frequentes e informações de contato da unidade;
 
-consulta do histórico vacinal de forma organizada;
+lembretes automáticos enviados um dia antes da data prevista.
 
-possibilidade de utilizar regras relacionadas a vacina, dose, idade e histórico para futuras orientações;
-
-possibilidade de integração com chatbot e outros canais em etapas futuras.
+Toda orientação do chatbot tem caráter informativo. A confirmação final deve ser feita pela equipe da sala de vacina da UBS Centenário.
 
 4. Produto Mínimo Viável (MVP)
 
-O MVP definido para o projeto tem como foco o registro assistido do histórico vacinal.
+O MVP é o chatbot implementado na pasta chatbot-vacinas/.
 
 Fluxo previsto:
 
-Caderneta/cartão
+Mensagem do usuário
 ||
 /
-OCR
+Identificação da intenção
 ||
 /
-Identificação dos dados
+Coleta de vacina, dose e datas
 ||
 /
-Conferência pelo profissional
+Cálculo pelo motor de regras
 ||
 /
-Registro digital estruturado
+Orientação da próxima dose
 ||
 /
-Consulta do histórico
+Lembrete automático
 
-Os principais campos considerados no MVP são:
-
-nome da vacina;
-
-data da aplicação;
-
-dose;
-
-idade;
-
-informações relacionadas ao registro.
-
-A utilização de OCR não elimina a conferência humana. A tecnologia será utilizada como apoio ao profissional, mantendo uma etapa de validação antes da confirmação.
+As regras de vacinação cadastradas ainda são preliminares e precisam ser validadas pela equipe da UBS antes de qualquer uso real. A documentação técnica, as instruções de execução e os limites atuais do protótipo estão em chatbot-vacinas/README.md.
 
 TED 01 – DEFINIÇÃO DO PROBLEMA DE DADOS E SELEÇÃO DO CONJUNTO DE DADOS
 
@@ -660,7 +642,7 @@ Histórico
 /
 Próxima orientação
 
-No MVP, o OCR poderá auxiliar na transformação das informações presentes em uma caderneta física em dados estruturados.
+No MVP, o chatbot utiliza essa mesma relação: a partir da vacina, da última dose, das datas informadas e da idade, o motor de regras indica a orientação da próxima dose.
 
 A análise também mostrou a importância de uma etapa de conferência e validação, principalmente porque existem valores inválidos e campos com diferentes níveis de preenchimento.
 
@@ -688,48 +670,34 @@ Essas características devem ser consideradas nas próximas etapas de desenvolvi
 
 Unidade-Basica-de-Saude-UBS-
 │
+├── chatbot-vacinas/            # MVP: chatbot no Telegram
+│   ├── bot.py                  # menus e fluxo de conversa
+│   ├── motor_regras.py         # cálculo da próxima dose
+│   ├── pln.py                  # classificação de intenção
+│   ├── database.py             # lembretes em SQLite
+│   ├── scheduler.py            # agendamento dos lembretes
+│   ├── data/                   # regras do PNI, FAQ e intenções
+│   ├── tests/                  # testes automatizados
+│   ├── requirements.txt
+│   └── README.md               # documentação técnica do chatbot
+│
 ├── data/
-│   ├── raw/
-│   │   ├── vacinacao_jan_2025.csv
-│   │   ├── vacinacao_fev_2025.csv
-│   │   ├── vacinacao_mar_2025.csv
-│   │   ├── vacinacao_abr_2025.csv
-│   │   ├── vacinacao_mai_2025.csv
-│   │   ├── vacinacao_jun_2025.csv
-│   │   ├── vacinacao_jul_2025.csv
-│   │   ├── vacinacao_ago_2025.csv
-│   │   ├── vacinacao_set_2025.csv
-│   │   ├── vacinacao_out_2025.csv
-│   │   ├── vacinacao_nov_2025.csv
-│   │   └── vacinacao_dez_2025.csv
-│   │
-│   └── processed/
-│       ├── 01_contagem_por_arquivo.csv
-│       ├── 02_resumo_limpeza.csv
-│       ├── 03_totais_limpeza.csv
-│       ├── 04_qualidade_colunas.csv
-│       ├── 05_estatisticas_idade.csv
-│       ├── 06_registros_por_mes.csv
-│       ├── 07_top_vacinas.csv
-│       ├── 08_distribuicao_doses.csv
-│       ├── 09_registros_por_uf.csv
-│       ├── 10_distribuicao_sexo.csv
-│       ├── 11_idade_por_vacina.csv
-│       ├── 12_resumo_final.csv
-│       ├── amostra_tratada_1000.csv
-│       ├── 01_distribuicao_idade.png
-│       ├── 02_registros_por_mes.png
-│       ├── 03_top_vacinas.png
-│       └── 04_registros_por_uf.png
+│   ├── raw/                    # dados brutos do PNI 2025 (não versionados)
+│   └── processed/              # resultados das TEDs 02 e 03
+│       └── TED3_resultados/
 │
 ├── docs/
 │   ├── TED1.pdf
-│   └── TED2.pdf
+│   ├── TED2.pdf
+│   ├── VACINA_Documento_Tecnico_Integrador_v3.0.docx
+│   └── VACINA_Documento_Tecnico_Integrador_v3.0.pdf
 │
 ├── notebook/
-│   ├── TED1/
-│   └── TED2/
-│       └── ted02_eda.py
+│   ├── TED2/
+│   │   ├── ted02_eda.py
+│   │   └── ted02_limpeza_dos_dados.py
+│   └── TED3/
+│       └── ted03_modelagem.py
 │
 └── README.md
 
@@ -1051,7 +1019,7 @@ O experimento demonstrou que é possível utilizar informações estruturadas do
 
 
 
-No MVP, a prioridade continua sendo a digitalização e a organização das informações, com conferência humana dos dados extraídos. O modelo pode ser estudado futuramente, desde que seja submetido a novas avaliações e validado com dados adequados.
+No MVP, o chatbot utiliza um motor de regras determinístico, e não este classificador, para orientar as próximas doses. O modelo pode ser estudado futuramente, desde que seja submetido a novas avaliações e validado com dados adequados.
 
 
 
@@ -1143,4 +1111,4 @@ A matriz de confusão mostrou diferenças importantes de desempenho entre as cla
 
 
 
-Para o projeto VACINA, a aplicação mais adequada neste momento é continuar priorizando a digitalização, a organização dos registros e a conferência humana das informações.
+Para o projeto VACINA, a aplicação mais adequada neste momento é manter a orientação do chatbot baseada em regras do calendário oficial, validadas pela equipe da UBS.

@@ -14,7 +14,8 @@ data/raw/
 # Arquivos tempor√°rios
 *.tmp
 *.temp
-# Banco auxiliar da verificaÁ„o de duplicidades
+# Bancos SQLite locais (verifica√ß√£o de duplicidades e lembretes do chatbot)
 *.sqlite
+*.sqlite3
 
 data/clean/
