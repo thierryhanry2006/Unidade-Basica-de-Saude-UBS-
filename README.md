@@ -7,7 +7,7 @@ Projeto desenvolvido nas disciplinas de **Inteligência Artificial** e **Big Dat
 | | |
 |---|---|
 | **Equipe** | Emilly Karoline Cunha Fernandes<br>Thierry Hanry Ribeiro da Silva Cardoso<br>Hágape Latan Mendonça de Sousa<br>César Kayoma Sousa de Oliveira |
-| **Orientador** | Alex Rogaleski Marques |
+| **Orientador** | Alex Rogaleski Marques e Marcos David Souza Ramos|
 | **Instituição** | UNIBALSAS – Balsas, Maranhão |
 | **Ano** | 2026 |
 
