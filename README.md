@@ -1,670 +1,471 @@
-VACINA
+# VACINA
 
-Chatbot de Orientação Vacinal e Lembretes Automáticos para a UBS Centenário
+**Chatbot de Orientação Vacinal e Lembretes Automáticos para a UBS Centenário**
 
-Projeto desenvolvido nas disciplinas de Inteligência Artificial e Big Data e Ciência de Dados, tendo como referência a realidade da UBS Centenário, localizada no bairro Juá, em Riachão – Maranhão.
+Projeto desenvolvido nas disciplinas de **Inteligência Artificial** e **Big Data e Ciência de Dados**, tendo como referência a realidade da UBS Centenário, localizada no bairro Juá, em Riachão – Maranhão.
 
-Equipe
-Emilly Karoline Cunha Fernandes
-Thierry Hanry Ribeiro da Silva Cardoso
-Hágape Latan Mendonça de Sousa
-César Kayoma Sousa de Oliveira
-Orientador
-Alex Rogaleski Marques
-Instituição
-UNIBALSAS – Balsas, Maranhão
-Ano
-2026
+| | |
+|---|---|
+| **Equipe** | Emilly Karoline Cunha Fernandes<br>Thierry Hanry Ribeiro da Silva Cardoso<br>Hágape Latan Mendonça de Sousa<br>César Kayoma Sousa de Oliveira |
+| **Orientador** | Alex Rogaleski Marques |
+| **Instituição** | UNIBALSAS – Balsas, Maranhão |
+| **Ano** | 2026 |
 
-Sumário
+---
 
-• Sobre o projeto
-• Problema identificado
-• Solução proposta
-• Produto Mínimo Viável (MVP)
-• TED 01 – Definição do problema de dados e seleção do conjunto
-• TED 02 – Limpeza, saneamento e análise exploratória
-• TED 03 – Modelagem preditiva e Machine Learning
-• Estrutura do repositório
-• Como executar
-• Dados brutos e GitHub
-• Segurança e privacidade
-• Considerações finais
-• Referências
+## Sumário
 
-Sobre o projeto
+- [Sobre o projeto](#sobre-o-projeto)
+- [Problema identificado](#problema-identificado)
+- [Solução proposta](#solução-proposta)
+- [Produto Mínimo Viável (MVP)](#produto-mínimo-viável-mvp)
+- [TED 01 – Definição do problema de dados e seleção do conjunto](#ted-01--definição-do-problema-de-dados-e-seleção-do-conjunto)
+- [TED 02 – Limpeza, saneamento e análise exploratória](#ted-02--limpeza-saneamento-e-análise-exploratória)
+- [TED 03 – Modelagem preditiva e Machine Learning](#ted-03--modelagem-preditiva-e-machine-learning)
+- [Estrutura do repositório](#estrutura-do-repositório)
+- [Como executar](#como-executar)
+- [Dados brutos e GitHub](#dados-brutos-e-github)
+- [Segurança e privacidade](#segurança-e-privacidade)
+- [Considerações finais](#considerações-finais)
+- [Referências](#referências)
+
+---
+
+## Sobre o projeto
 
 O projeto surgiu a partir de uma situação observada na sala de vacinação da UBS Centenário. Muitas pessoas não sabem quando devem retornar para a próxima dose de uma vacina, esquecem a data prevista ou precisam ir até a unidade apenas para tirar dúvidas simples sobre vacinação.
 
-A proposta é oferecer um chatbot que oriente a população sobre a próxima dose, responda perguntas frequentes e envie lembretes automáticos antes da data prevista, reduzindo atrasos e a demanda por informações básicas na sala de vacina.
+A proposta é oferecer um **chatbot** que oriente a população sobre a próxima dose, responda perguntas frequentes e envie lembretes automáticos antes da data prevista, reduzindo atrasos e a demanda por informações básicas na sala de vacina.
 
-Problema identificado
+## Problema identificado
 
-Como orientar os pacientes da UBS Centenário sobre suas próximas doses de vacina e lembrá-los das datas previstas, de forma simples e acessível?
+> **Como orientar os pacientes da UBS Centenário sobre suas próximas doses de vacina e lembrá-los das datas previstas, de forma simples e acessível?**
 
-Solução proposta
+## Solução proposta
 
-A solução é um chatbot no Telegram com os seguintes recursos:
+A solução é um **chatbot no Telegram** com os seguintes recursos:
 
-• cálculo da data prevista da próxima dose a partir da data de nascimento, da vacina, da última dose recebida e da data dessa dose;
-• motor de regras determinístico baseado no Calendário Nacional de Vacinação (PNI), que encaminha à UBS todo caso fora do esquema cadastrado;
-• classificação da intenção das mensagens em texto livre (Processamento de Linguagem Natural);
-• respostas às perguntas frequentes e informações de contato da unidade;
-• lembretes automáticos enviados um dia antes da data prevista.
+- cálculo da data prevista da próxima dose a partir da data de nascimento, da vacina, da última dose recebida e da data dessa dose;
+- **motor de regras determinístico** baseado no Calendário Nacional de Vacinação (PNI), que encaminha à UBS todo caso fora do esquema cadastrado;
+- classificação da intenção das mensagens em texto livre (**Processamento de Linguagem Natural**);
+- respostas às perguntas frequentes e informações de contato da unidade;
+- **lembretes automáticos** enviados um dia antes da data prevista.
 
-Atenção: toda orientação do chatbot tem caráter informativo. A confirmação final deve ser feita pela equipe da sala de vacina da UBS Centenário.
+> **Atenção:** toda orientação do chatbot tem caráter informativo. A confirmação final deve ser feita pela equipe da sala de vacina da UBS Centenário.
 
-Produto Mínimo Viável (MVP)
+## Produto Mínimo Viável (MVP)
 
-O MVP é o chatbot implementado na pasta chatbot-vacinas/.
+O MVP é o chatbot implementado na pasta [`chatbot-vacinas/`](chatbot-vacinas/).
 
-Fluxo previsto:
+**Fluxo previsto:**
 
+```mermaid
 flowchart LR
     A[Mensagem do usuário] --> B[Identificação da intenção]
     B --> C[Coleta de vacina, dose e datas]
     C --> D[Cálculo pelo motor de regras]
     D --> E[Orientação da próxima dose]
     E --> F[Lembrete automático]
-Módulo
-Função
-bot.py
-Menus e fluxo de conversa
-motor_regras.py
-Cálculo da próxima dose
-pln.py
-Classificação de intenção
-database.py
-Armazenamento dos lembretes em SQLite
-scheduler.py
-Agendamento dos lembretes
+```
 
-Atenção: as regras de vacinação cadastradas ainda são preliminares e precisam ser validadas pela equipe da UBS antes de qualquer uso real.
+| Módulo | Função |
+|---|---|
+| `bot.py` | Menus e fluxo de conversa |
+| `motor_regras.py` | Cálculo da próxima dose |
+| `pln.py` | Classificação de intenção |
+| `database.py` | Armazenamento dos lembretes em SQLite |
+| `scheduler.py` | Agendamento dos lembretes |
 
-A documentação técnica, as instruções de execução e os limites atuais do protótipo estão em chatbot-vacinas/README.md.
+> **Atenção:** as regras de vacinação cadastradas ainda são **preliminares** e precisam ser validadas pela equipe da UBS antes de qualquer uso real.
 
-TED 01 – Definição do problema de dados e seleção do conjunto
+A documentação técnica, as instruções de execução e os limites atuais do protótipo estão em [`chatbot-vacinas/README.md`](chatbot-vacinas/README.md).
 
-Conjunto de dados selecionado
+---
+
+## TED 01 – Definição do problema de dados e seleção do conjunto
+
+### Conjunto de dados selecionado
 
 Na primeira etapa foram pesquisadas diferentes bases públicas relacionadas às doses aplicadas pelo Programa Nacional de Imunizações, principalmente as bases do PNI referentes aos anos de 2021, 2023, 2024 e 2025.
 
-Após a comparação, foi selecionada a base Doses aplicadas pelo Programa Nacional de Imunizações (PNI) – 2025, pela relação direta com o problema do projeto, pela atualidade dos dados em relação às alternativas analisadas e pela disponibilidade em arquivos e API.
+Após a comparação, foi selecionada a base **Doses aplicadas pelo Programa Nacional de Imunizações (PNI) – 2025**, pela relação direta com o problema do projeto, pela atualidade dos dados em relação às alternativas analisadas e pela disponibilidade em arquivos e API.
 
-Fonte dos dados
+### Fonte dos dados
 
-Fonte institucional
-Ministério da Saúde
-Departamento
-Departamento do Programa Nacional de Imunizações (DPNI)
-Portal
-Portal de Dados Abertos do SUS
-Conjunto
-https://dadosabertos.saude.gov.br/dataset/doses-aplicadas-pelo-programa-de-nacional-de-imunizacoes-pni-2025
-API (etapa inicial)
-https://apidadosabertos.saude.gov.br/vacinacao/doses-aplicadas-pni-2025
+| | |
+|---|---|
+| **Fonte institucional** | Ministério da Saúde |
+| **Departamento** | Departamento do Programa Nacional de Imunizações (DPNI) |
+| **Portal** | Portal de Dados Abertos do SUS |
+| **Conjunto** | <https://dadosabertos.saude.gov.br/dataset/doses-aplicadas-pelo-programa-de-nacional-de-imunizacoes-pni-2025> |
+| **API (etapa inicial)** | <https://apidadosabertos.saude.gov.br/vacinacao/doses-aplicadas-pni-2025> |
 
-Na primeira consulta pela API foi utilizado limit=1000, resultando em 1.000 registros retornados. Esse valor não representa o total da base PNI 2025.
+Na primeira consulta pela API foi utilizado `limit=1000`, resultando em 1.000 registros retornados. Esse valor **não representa o total** da base PNI 2025.
 
-Principais atributos identificados
+### Principais atributos identificados
 
-Campo
-Descrição
-co_vacina
-Código da vacina
-sg_imunobiologico
-Sigla do imunobiológico
-ds_nome
-Nome da vacina
-dt_vacina
-Data da vacinação
-co_dose_vacina
-Código da dose
-ds_tipo_dose
-Tipo da dose
-nu_idade_paciente
-Idade do paciente
-tp_sexo_paciente
-Sexo informado no registro
-co_municipio_paciente
-Código do município do paciente
-no_municipio_paciente
-Município do paciente
-sg_uf_paciente
-UF do paciente
-co_cnes_estabelecimento
-Código CNES do estabelecimento
-no_municipio_estabelecimento
-Município do estabelecimento
-sg_uf_estabelecimento
-UF do estabelecimento
-ds_tipo_estabelecimento
-Tipo do estabelecimento
-ds_vacina_fabricante
-Fabricante
-ds_via_administracao
-Via de administração
-ds_local_aplicacao
-Local de aplicação
-dt_entrada_rnds
-Data de entrada do registro na RNDS
-co_sistema_origem
-Código do sistema de origem
-ds_sistema_origem
-Sistema de origem
+| Campo | Descrição |
+|---|---|
+| `co_vacina` | Código da vacina |
+| `sg_imunobiologico` | Sigla do imunobiológico |
+| `ds_nome` | Nome da vacina |
+| `dt_vacina` | Data da vacinação |
+| `co_dose_vacina` | Código da dose |
+| `ds_tipo_dose` | Tipo da dose |
+| `nu_idade_paciente` | Idade do paciente |
+| `tp_sexo_paciente` | Sexo informado no registro |
+| `co_municipio_paciente` | Código do município do paciente |
+| `no_municipio_paciente` | Município do paciente |
+| `sg_uf_paciente` | UF do paciente |
+| `co_cnes_estabelecimento` | Código CNES do estabelecimento |
+| `no_municipio_estabelecimento` | Município do estabelecimento |
+| `sg_uf_estabelecimento` | UF do estabelecimento |
+| `ds_tipo_estabelecimento` | Tipo do estabelecimento |
+| `ds_vacina_fabricante` | Fabricante |
+| `ds_via_administracao` | Via de administração |
+| `ds_local_aplicacao` | Local de aplicação |
+| `dt_entrada_rnds` | Data de entrada do registro na RNDS |
+| `co_sistema_origem` | Código do sistema de origem |
+| `ds_sistema_origem` | Sistema de origem |
 
-TED 02 – Limpeza, saneamento e análise exploratória
+---
 
-Preparação dos dados
+## TED 02 – Limpeza, saneamento e análise exploratória
 
-Foram utilizados os 12 arquivos mensais do PNI 2025 (janeiro a dezembro), de vacinacao_jan_2025.csv a vacinacao_dez_2025.csv, que somam aproximadamente 107,7 GB.
+### Preparação dos dados
 
-• Devido ao volume, os dados foram processados em partes (chunks) de 200.000 registros, evitando carregar todo o conjunto na memória de uma única vez.
-• A leitura foi ajustada para lidar com diferentes codificações — por exemplo, o arquivo de abril foi identificado como cp1252.
+Foram utilizados os **12 arquivos mensais do PNI 2025** (janeiro a dezembro), de `vacinacao_jan_2025.csv` a `vacinacao_dez_2025.csv`, que somam aproximadamente **107,7 GB**.
 
-Ao final da execução foram processados 178.451.615 registros, correspondentes à soma dos 12 arquivos mensais.
+- Devido ao volume, os dados foram processados em partes (*chunks*) de **200.000 registros**, evitando carregar todo o conjunto na memória de uma única vez.
+- A leitura foi ajustada para lidar com diferentes codificações — por exemplo, o arquivo de abril foi identificado como `cp1252`.
 
-Limpeza e saneamento
+Ao final da execução foram processados **178.451.615 registros**, correspondentes à soma dos 12 arquivos mensais.
 
-Verificação
-Resultado
-Registros com idade inválida
-1.056
-Datas inválidas
-0
-Registros com dt_deletado_rnds preenchido
-0
-Duplicidades detectadas (dentro dos blocos)
-0
-Idades válidas
-178.450.559
+### Limpeza e saneamento
 
-Observação sobre duplicidades: a verificação foi realizada dentro dos blocos de processamento. Por isso, o resultado deve ser interpretado como 0 duplicidades detectadas nos blocos, e não como uma deduplicação global completa de todos os registros.
+| Verificação | Resultado |
+|---|---:|
+| Registros com idade inválida | 1.056 |
+| Datas inválidas | 0 |
+| Registros com `dt_deletado_rnds` preenchido | 0 |
+| Duplicidades detectadas (dentro dos blocos) | 0 |
+| **Idades válidas** | **178.450.559** |
 
-Estatísticas da idade
+> **Observação sobre duplicidades:** a verificação foi realizada dentro dos blocos de processamento. Por isso, o resultado deve ser interpretado como *0 duplicidades detectadas nos blocos*, e não como uma deduplicação global completa de todos os registros.
 
-Estatística
-Resultado
-Quantidade válida
-178.450.559
-Média
-24,22 anos
-Mediana
-12 anos
-Mínimo
-0 anos
-Máximo
-120 anos
-Desvio padrão
-26,24
-Q1
-1 ano
-Q3
-45 anos
-IQR
-44
+### Estatísticas da idade
 
-A diferença entre média e mediana indica que a distribuição das idades é assimétrica, com concentração em idades mais baixas e presença de registros em idades mais elevadas.
+| Estatística | Resultado |
+|---|---:|
+| Quantidade válida | 178.450.559 |
+| Média | 24,22 anos |
+| Mediana | 12 anos |
+| Mínimo | 0 anos |
+| Máximo | 120 anos |
+| Desvio padrão | 26,24 |
+| Q1 | 1 ano |
+| Q3 | 45 anos |
+| IQR | 44 |
 
-Outliers
+A diferença entre média e mediana indica que a distribuição das idades é **assimétrica**, com concentração em idades mais baixas e presença de registros em idades mais elevadas.
+
+### Outliers
 
 Foi utilizado o método do intervalo interquartil (IQR):
 
+```
 Q1 = 1   Q3 = 45   IQR = 44
 Limite superior = Q3 + 1,5 × IQR = 111 anos
+```
 
-Foram identificados 660 registros acima de 111 anos. Eles foram classificados como estatisticamente atípicos, mas não foram excluídos automaticamente: ser outlier, por si só, não basta para afirmar que o registro esteja incorreto.
+Foram identificados **660 registros acima de 111 anos**. Eles foram classificados como estatisticamente atípicos, mas **não foram excluídos automaticamente**: ser outlier, por si só, não basta para afirmar que o registro esteja incorreto.
 
-Distribuição mensal
+### Distribuição mensal
 
-Mês
-Registros
-Janeiro
-12.062.476
-Fevereiro
-9.334.511
-Março
-9.712.072
-Abril
-25.913.391
-Maio
-32.666.708
-Junho
-20.466.802
-Julho
-15.226.105
-Agosto
-11.244.935
-Setembro
-11.604.457
-Outubro
-9.973.489
-Novembro
-10.839.981
-Dezembro
-9.406.688
-Total
-178.451.615
+| Mês | Registros |
+|---|---:|
+| Janeiro | 12.062.476 |
+| Fevereiro | 9.334.511 |
+| Março | 9.712.072 |
+| Abril | 25.913.391 |
+| Maio | 32.666.708 |
+| Junho | 20.466.802 |
+| Julho | 15.226.105 |
+| Agosto | 11.244.935 |
+| Setembro | 11.604.457 |
+| Outubro | 9.973.489 |
+| Novembro | 10.839.981 |
+| Dezembro | 9.406.688 |
+| **Total** | **178.451.615** |
 
-O maior volume ocorreu em maio (32.666.708) e o menor em fevereiro (9.334.511).
+O maior volume ocorreu em **maio** (32.666.708) e o menor em **fevereiro** (9.334.511).
 
-Principais vacinas
+### Principais vacinas
 
-Vacina
-Registros
-Influenza trivalente
-60.493.978
-Hepatite B
-11.427.555
-dT
-11.422.945
-VIP
-10.601.972
-Febre amarela
-8.295.176
-Penta
-6.532.069
-Pneumocócica 10-valente
-6.248.130
-SCR
-5.835.854
-Meningocócica ACWY
-5.016.632
-Meningocócica C
-4.853.558
+| Vacina | Registros |
+|---|---:|
+| Influenza trivalente | 60.493.978 |
+| Hepatite B | 11.427.555 |
+| dT | 11.422.945 |
+| VIP | 10.601.972 |
+| Febre amarela | 8.295.176 |
+| Penta | 6.532.069 |
+| Pneumocócica 10-valente | 6.248.130 |
+| SCR | 5.835.854 |
+| Meningocócica ACWY | 5.016.632 |
+| Meningocócica C | 4.853.558 |
 
-A influenza trivalente representou aproximadamente 33,90% dos registros analisados.
+A influenza trivalente representou aproximadamente **33,90%** dos registros analisados.
 
-Distribuição das doses
+### Distribuição das doses
 
-Tipo de dose
-Registros
-Única
-72.246.157
-1ª Dose
-32.813.074
-2ª Dose
-24.951.467
-Reforço
-17.665.180
-Dose
-14.605.803
-3ª Dose
-9.155.650
-1º Reforço
-2.907.869
-2º Reforço
-2.359.302
-Revacinação
-801.846
-4ª Dose
-255.007
+| Tipo de dose | Registros |
+|---|---:|
+| Única | 72.246.157 |
+| 1ª Dose | 32.813.074 |
+| 2ª Dose | 24.951.467 |
+| Reforço | 17.665.180 |
+| Dose | 14.605.803 |
+| 3ª Dose | 9.155.650 |
+| 1º Reforço | 2.907.869 |
+| 2º Reforço | 2.359.302 |
+| Revacinação | 801.846 |
+| 4ª Dose | 255.007 |
 
-A categoria Única foi a mais frequente, com aproximadamente 40,49% do total.
+A categoria **Única** foi a mais frequente, com aproximadamente **40,49%** do total.
 
-Distribuição por sexo
+### Distribuição por sexo
 
-Sexo
-Registros
-Percentual aproximado
-F
-96.984.897
-54,35%
-M
-81.459.490
-45,65%
-I
-7.228
-0,004%
-Total
-178.451.615
-100%
+| Sexo | Registros | Percentual aproximado |
+|---|---:|---:|
+| F | 96.984.897 | 54,35% |
+| M | 81.459.490 | 45,65% |
+| I | 7.228 | 0,004% |
+| **Total** | **178.451.615** | **100%** |
 
-A categoria I foi mantida exatamente como aparece na base. Não foi atribuída interpretação adicional ao código por não ter sido localizada uma definição específica na documentação consultada.
+A categoria **I** foi mantida exatamente como aparece na base. Não foi atribuída interpretação adicional ao código por não ter sido localizada uma definição específica na documentação consultada.
 
-Distribuição por unidade federativa (principais)
+### Distribuição por unidade federativa (principais)
 
-UF
-Registros
-SP
-37.532.341
-MG
-18.339.534
-RJ
-11.934.495
-PR
-10.735.663
-BA
-10.645.711
-RS
-9.306.957
-CE
-7.774.212
-SC
-7.144.636
-PE
-7.104.152
-PA
-6.709.744
-GO
-6.052.722
-MA
-5.796.555
+| UF | Registros |
+|---|---:|
+| SP | 37.532.341 |
+| MG | 18.339.534 |
+| RJ | 11.934.495 |
+| PR | 10.735.663 |
+| BA | 10.645.711 |
+| RS | 9.306.957 |
+| CE | 7.774.212 |
+| SC | 7.144.636 |
+| PE | 7.104.152 |
+| PA | 6.709.744 |
+| GO | 6.052.722 |
+| **MA** | **5.796.555** |
 
-Também foram encontrados 2.536.082 registros sem UF do paciente informada e 684 registros com o código XX.
+Também foram encontrados **2.536.082 registros sem UF do paciente** informada e **684 registros com o código `XX`**.
 
-Valores ausentes
+### Valores ausentes
 
-Campo
-Ausentes
-Percentual
-dt_deletado_rnds
-178.451.615
-100,00%
-ds_condicao_maternal
-80.533.793
-45,13%
-ds_categoria
-75.593.404
-42,36%
-ds_via_administracao
-7.546.759
-4,23%
-ds_tipo_estabelecimento
-7.491.716
-4,20%
-ds_local_aplicacao
-7.491.219
-4,20%
-ds_vacina_fabricante
-6.917.531
-3,88%
-sg_uf_paciente
-2.536.082
-1,42%
+| Campo | Ausentes | Percentual |
+|---|---:|---:|
+| `dt_deletado_rnds` | 178.451.615 | 100,00% |
+| `ds_condicao_maternal` | 80.533.793 | 45,13% |
+| `ds_categoria` | 75.593.404 | 42,36% |
+| `ds_via_administracao` | 7.546.759 | 4,23% |
+| `ds_tipo_estabelecimento` | 7.491.716 | 4,20% |
+| `ds_local_aplicacao` | 7.491.219 | 4,20% |
+| `ds_vacina_fabricante` | 6.917.531 | 3,88% |
+| `sg_uf_paciente` | 2.536.082 | 1,42% |
 
-Não foram identificados valores ausentes nos campos principais: co_vacina, co_dose_vacina, dt_vacina, tp_sexo_paciente, nu_idade_paciente, ds_nome, ds_tipo_dose e dt_entrada_rnds.
+Não foram identificados valores ausentes nos campos principais: `co_vacina`, `co_dose_vacina`, `dt_vacina`, `tp_sexo_paciente`, `nu_idade_paciente`, `ds_nome`, `ds_tipo_dose` e `dt_entrada_rnds`.
 
-Principais padrões observados
+### Principais padrões observados
 
-• grande variação no volume mensal, com maior concentração em maio;
-• a influenza trivalente concentrou aproximadamente 33,90% dos registros;
-• a dose Única apresentou o maior volume;
-• diferença significativa entre média e mediana da idade;
-• alguns atributos têm muitos valores ausentes, enquanto os campos diretamente ligados à vacinação estão completos;
-• abrangência nacional, com diferenças consideráveis entre as UFs.
+- grande variação no volume mensal, com maior concentração em maio;
+- a influenza trivalente concentrou aproximadamente 33,90% dos registros;
+- a dose **Única** apresentou o maior volume;
+- diferença significativa entre média e mediana da idade;
+- alguns atributos têm muitos valores ausentes, enquanto os campos diretamente ligados à vacinação estão completos;
+- abrangência nacional, com diferenças consideráveis entre as UFs.
 
-Relação com o projeto e o MVP
+### Relação com o projeto e o MVP
 
 Os resultados ajudam a compreender quais informações precisam estar presentes em um histórico vacinal estruturado. A relação principal utilizada pelo projeto é:
 
+```mermaid
 flowchart LR
     A[Vacina] --> B[Dose] --> C[Data] --> D[Idade / Grupo] --> E[Histórico] --> F[Próxima orientação]
+```
 
 No MVP, o chatbot utiliza essa mesma relação: a partir da vacina, da última dose, das datas informadas e da idade, o motor de regras indica a orientação da próxima dose.
 
 A análise também reforçou a importância de uma etapa de conferência e validação, já que existem valores inválidos e campos com diferentes níveis de preenchimento.
 
-A base do PNI 2025 é utilizada como referência para compreender a estrutura dos registros. Ela não representa o histórico individual dos pacientes da UBS Centenário e não substitui os dados internos da unidade.
+> A base do PNI 2025 é utilizada **como referência para compreender a estrutura dos registros**. Ela não representa o histórico individual dos pacientes da UBS Centenário e não substitui os dados internos da unidade.
 
-Limitações
+### Limitações
 
-• O conjunto é nacional e não representa diretamente os pacientes da UBS Centenário.
-• Alguns atributos apresentam grande quantidade de valores ausentes.
-• Foram identificadas 1.056 idades inválidas.
-• Foram encontrados 660 outliers superiores pelo método do IQR.
-• A verificação de duplicidades foi realizada apenas dentro dos blocos de processamento.
-• O grande volume dos arquivos exige processamento por partes.
+- O conjunto é nacional e não representa diretamente os pacientes da UBS Centenário.
+- Alguns atributos apresentam grande quantidade de valores ausentes.
+- Foram identificadas 1.056 idades inválidas.
+- Foram encontrados 660 outliers superiores pelo método do IQR.
+- A verificação de duplicidades foi realizada apenas dentro dos blocos de processamento.
+- O grande volume dos arquivos exige processamento por partes.
 
-TED 03 – Modelagem preditiva e Machine Learning
+---
 
-Definição do problema
+## TED 03 – Modelagem preditiva e Machine Learning
 
-Foi desenvolvido um experimento de aprendizado de máquina para classificar o imunobiológico registrado em um atendimento de vacinação, definido como um problema de classificação multiclasse supervisionada.
+### Definição do problema
 
-• Variável-alvo: sg_imunobiologico
-• O experimento é técnico e exploratório e não foi desenvolvido para recomendar vacinas ou orientar decisões clínicas.
+Foi desenvolvido um experimento de aprendizado de máquina para **classificar o imunobiológico registrado em um atendimento de vacinação**, definido como um problema de **classificação multiclasse supervisionada**.
 
-Variáveis utilizadas
+- **Variável-alvo:** `sg_imunobiologico`
+- O experimento é técnico e exploratório e **não foi desenvolvido para recomendar vacinas ou orientar decisões clínicas**.
 
-Variável
-Descrição
-nu_idade_paciente
-Idade do paciente
-tp_sexo_paciente
-Sexo do paciente
-ds_tipo_dose
-Tipo de dose registrada
-mes_vacinacao
-Mês da vacinação
-sg_uf_paciente
-Unidade federativa
+### Variáveis utilizadas
 
-As variáveis co_vacina e ds_nome não foram utilizadas como entrada, por identificarem diretamente a vacina.
+| Variável | Descrição |
+|---|---|
+| `nu_idade_paciente` | Idade do paciente |
+| `tp_sexo_paciente` | Sexo do paciente |
+| `ds_tipo_dose` | Tipo de dose registrada |
+| `mes_vacinacao` | Mês da vacinação |
+| `sg_uf_paciente` | Unidade federativa |
 
-Preparação dos dados
+As variáveis `co_vacina` e `ds_nome` **não foram utilizadas** como entrada, por identificarem diretamente a vacina.
 
-Indicador
-Resultado
-Registros originais
-59.994
-Registros sem alvo ausente
-59.994
-Outliers de idade excluídos
-0
-Registros de classes com menos de 20 ocorrências
-120
-Registros utilizados na modelagem
-59.874
-Classes utilizadas
-46
-Valores de idade ausentes
-0
+### Preparação dos dados
+
+| Indicador | Resultado |
+|---|---:|
+| Registros originais | 59.994 |
+| Registros sem alvo ausente | 59.994 |
+| Outliers de idade excluídos | 0 |
+| Registros de classes com menos de 20 ocorrências | 120 |
+| **Registros utilizados na modelagem** | **59.874** |
+| Classes utilizadas | 46 |
+| Valores de idade ausentes | 0 |
 
 A principal redução ocorreu pela retirada de 120 registros de classes com menos de 20 ocorrências. Embora o pipeline tenha sido configurado para imputar a idade pela mediana, não foi necessário preencher valores ausentes nessa execução.
 
-Divisão dos dados
+### Divisão dos dados
 
-Conjunto
-Quantidade
-Proporção
-Treinamento
-47.899
-80%
-Teste
-11.975
-20%
-Total
-59.874
-100%
+| Conjunto | Quantidade | Proporção |
+|---|---:|---:|
+| Treinamento | 47.899 | 80% |
+| Teste | 11.975 | 20% |
+| **Total** | **59.874** | **100%** |
 
-A divisão foi estratificada com random_state=42. A validação cruzada usou 3 divisões estratificadas sobre uma amostra de 15.000 registros do conjunto de treinamento.
+A divisão foi **estratificada** com `random_state=42`. A validação cruzada usou **3 divisões estratificadas** sobre uma amostra de 15.000 registros do conjunto de treinamento.
 
-Pré-processamento e algoritmos
+### Pré-processamento e algoritmos
 
-Pré-processamento:
+**Pré-processamento:**
 
-• Idade: imputação pela mediana + padronização com StandardScaler.
-• Variáveis categóricas: imputação pela categoria mais frequente + OneHotEncoder(handle_unknown="ignore").
+- **Idade:** imputação pela mediana + padronização com `StandardScaler`.
+- **Variáveis categóricas:** imputação pela categoria mais frequente + `OneHotEncoder(handle_unknown="ignore")`.
 
-Algoritmos avaliados:
+**Algoritmos avaliados:**
 
-• Árvore de decisão com profundidade máxima de 5, 10 e 15;
-• KNN com 3, 5 e 7 vizinhos;
-• Random Forest com 120 árvores, profundidade máxima 20, mínimo de 2 amostras por folha e balanceamento de classes;
-• DummyClassifier como modelo de referência.
+- Árvore de decisão com profundidade máxima de 5, 10 e 15;
+- KNN com 3, 5 e 7 vizinhos;
+- Random Forest com 120 árvores, profundidade máxima 20, mínimo de 2 amostras por folha e balanceamento de classes;
+- `DummyClassifier` como modelo de referência.
 
-Métricas de avaliação
+### Métricas de avaliação
 
-Foram utilizadas acurácia, precisão macro, recall macro e F1-score macro. As métricas macro permitem observar o desempenho em todas as classes sem dar maior peso às categorias com mais registros.
+Foram utilizadas **acurácia**, **precisão macro**, **recall macro** e **F1-score macro**. As métricas macro permitem observar o desempenho em todas as classes sem dar maior peso às categorias com mais registros.
 
-Resultados da validação cruzada
+### Resultados da validação cruzada
 
-Modelo
-Acurácia
-Precisão macro
-Recall macro
-F1 macro
-Random Forest – 120 árvores
-0,4828
-0,2806
-0,3304
-0,2875
-Decision Tree – profundidade 15
-0,4127
-0,2864
-0,3141
-0,2663
-Decision Tree – profundidade 10
-0,3602
-0,2813
-0,3136
-0,2401
-KNN – 7 vizinhos
-0,4637
-0,2304
-0,2168
-0,2200
-KNN – 5 vizinhos
-0,4484
-0,2189
-0,2081
-0,2108
-KNN – 3 vizinhos
-0,4240
-0,2138
-0,2001
-0,2031
-Decision Tree – profundidade 5
-0,1811
-0,1130
-0,2023
-0,1071
+| Modelo | Acurácia | Precisão macro | Recall macro | F1 macro |
+|---|---:|---:|---:|---:|
+| **Random Forest – 120 árvores** | **0,4828** | 0,2806 | **0,3304** | **0,2875** |
+| Decision Tree – profundidade 15 | 0,4127 | **0,2864** | 0,3141 | 0,2663 |
+| Decision Tree – profundidade 10 | 0,3602 | 0,2813 | 0,3136 | 0,2401 |
+| KNN – 7 vizinhos | 0,4637 | 0,2304 | 0,2168 | 0,2200 |
+| KNN – 5 vizinhos | 0,4484 | 0,2189 | 0,2081 | 0,2108 |
+| KNN – 3 vizinhos | 0,4240 | 0,2138 | 0,2001 | 0,2031 |
+| Decision Tree – profundidade 5 | 0,1811 | 0,1130 | 0,2023 | 0,1071 |
 
-O Random Forest apresentou o maior F1-score macro (0,2875) e foi selecionado para a avaliação final.
+O **Random Forest** apresentou o maior F1-score macro (0,2875) e foi selecionado para a avaliação final.
 
-Avaliação no conjunto de teste
+### Avaliação no conjunto de teste
 
-Métrica
-DummyClassifier
-Random Forest
-Acurácia
-0,2489
-0,4760
-Precisão macro
-0,0054
-0,3037
-Recall macro
-0,0217
-0,3824
-F1 macro
-0,0087
-0,3120
+| Métrica | DummyClassifier | Random Forest |
+|---|---:|---:|
+| Acurácia | 0,2489 | **0,4760** |
+| Precisão macro | 0,0054 | **0,3037** |
+| Recall macro | 0,0217 | **0,3824** |
+| F1 macro | 0,0087 | **0,3120** |
 
-O Random Forest superou o modelo de referência em todas as métricas, com acurácia de 47,60% e F1-score macro de 0,3120.
+O Random Forest superou o modelo de referência em todas as métricas, com **acurácia de 47,60%** e **F1-score macro de 0,3120**.
 
-Análise da matriz de confusão
+### Análise da matriz de confusão
 
-Indicador
-Resultado
-Registros avaliados
-11.975
-Classificações corretas
-5.700
-Classificações incorretas
-6.275
-Acurácia
-47,60%
+| Indicador | Resultado |
+|---|---:|
+| Registros avaliados | 11.975 |
+| Classificações corretas | 5.700 |
+| Classificações incorretas | 6.275 |
+| Acurácia | 47,60% |
 
-Exemplos de taxa de acerto por classe:
+**Exemplos de taxa de acerto por classe:**
 
-Classe
-Registros reais
-Acertos
-Taxa de acerto
-DTP
-330
-316
-95,8%
-DNG
-337
-307
-91,1%
-HPV4
-261
-195
-74,7%
-VZ
-234
-170
-72,6%
-INF3
-2.981
-1.981
-66,5%
-VIP
-836
-99
-11,8%
-MenC
-366
-43
-11,7%
+| Classe | Registros reais | Acertos | Taxa de acerto |
+|---|---:|---:|---:|
+| DTP | 330 | 316 | 95,8% |
+| DNG | 337 | 307 | 91,1% |
+| HPV4 | 261 | 195 | 74,7% |
+| VZ | 234 | 170 | 72,6% |
+| INF3 | 2.981 | 1.981 | 66,5% |
+| VIP | 836 | 99 | 11,8% |
+| MenC | 366 | 43 | 11,7% |
 
-Principais confusões entre classes:
+**Principais confusões entre classes:**
 
-Classe real
-Classificada como
-Registros
-INF3
-HPV4
-249
-Penta
-ROTA
-155
-VPC10
-ROTA
-151
-VIP
-ROTA
-138
-dT
-HB
-121
+| Classe real | Classificada como | Registros |
+|---|---|---:|
+| INF3 | HPV4 | 249 |
+| Penta | ROTA | 155 |
+| VPC10 | ROTA | 151 |
+| VIP | ROTA | 138 |
+| dT | HB | 121 |
 
 O desempenho variou bastante: o modelo reconheceu algumas categorias com facilidade, mas teve dificuldade para diferenciar outras.
 
-Interpretação e limitações
+### Interpretação e limitações
 
 O Random Forest foi o melhor algoritmo entre os avaliados, mas o desempenho não foi uniforme. As principais limitações foram:
 
-• desbalanceamento das classes;
-• confusão entre categorias;
-• uso de uma base nacional que não representa especificamente os pacientes da UBS Centenário.
+- desbalanceamento das classes;
+- confusão entre categorias;
+- uso de uma base nacional que não representa especificamente os pacientes da UBS Centenário.
 
-Atenção: O modelo ainda não apresenta confiabilidade suficiente para uso operacional ou clínico. A classificação não deve substituir a leitura dos documentos, a conferência profissional ou os protocolos oficiais de vacinação.
+> **Atenção:** O modelo **ainda não apresenta confiabilidade suficiente para uso operacional ou clínico**. A classificação não deve substituir a leitura dos documentos, a conferência profissional ou os protocolos oficiais de vacinação.
 
-Relação com o projeto VACINA
+### Relação com o projeto VACINA
 
 O experimento demonstrou que é possível usar informações estruturadas dos registros de vacinação para treinar modelos de classificação, mas o desempenho obtido ainda não permite usar o classificador como ferramenta automática confiável.
 
-No MVP, o chatbot utiliza um motor de regras determinístico, e não este classificador, para orientar as próximas doses. O modelo pode ser estudado futuramente, desde que passe por novas avaliações e seja validado com dados adequados.
+No MVP, o chatbot utiliza um **motor de regras determinístico**, e não este classificador, para orientar as próximas doses. O modelo pode ser estudado futuramente, desde que passe por novas avaliações e seja validado com dados adequados.
 
-Arquivos da TED 03
+### Arquivos da TED 03
 
-Item
-Caminho
-Script principal
-notebook/TED3/ted03_modelagem.py
-Base utilizada
-data/processed/PNI_2025_preparado_github.csv
-Resultados
-data/processed/TED3_resultados/
+| Item | Caminho |
+|---|---|
+| Script principal | `notebook/TED3/ted03_modelagem.py` |
+| Base utilizada | `data/processed/PNI_2025_preparado_github.csv` |
+| Resultados | `data/processed/TED3_resultados/` |
 
 Entre os arquivos gerados estão: comparação da validação cruzada, matriz de confusão, métricas de teste, relatório de classificação, resumo da preparação, distribuição das classes e gráfico dos principais imunobiológicos.
 
-Estrutura do repositório
+---
 
+## Estrutura do repositório
+
+```
 Unidade-Basica-de-Saude-UBS-/
 ├── chatbot-vacinas/              # MVP: chatbot no Telegram
 │   ├── bot.py                    # menus e fluxo de conversa
@@ -697,24 +498,28 @@ Unidade-Basica-de-Saude-UBS-/
 │       └── ted03_modelagem.py
 │
 └── README.md
+```
 
-Como executar
+## Como executar
 
-Chatbot (MVP)
+### Chatbot (MVP)
 
-As instruções de instalação, configuração do token do Telegram e execução do chatbot estão em chatbot-vacinas/README.md.
+As instruções de instalação, configuração do token do Telegram e execução do chatbot estão em [`chatbot-vacinas/README.md`](chatbot-vacinas/README.md).
 
-Análises das TEDs
+### Análises das TEDs
 
-Requisitos: Python 3, Pandas, NumPy, Matplotlib e scikit-learn.
+**Requisitos:** Python 3, Pandas, NumPy, Matplotlib e scikit-learn.
 
-1. Clonar o repositório
+**1. Clonar o repositório**
 
+```bash
 git clone https://github.com/thierryhanry2006/Unidade-Basica-de-Saude-UBS-.git
 cd Unidade-Basica-de-Saude-UBS-
+```
 
-2. Criar e ativar o ambiente virtual
+**2. Criar e ativar o ambiente virtual**
 
+```bash
 python -m venv .venv
 
 # Windows
@@ -722,54 +527,61 @@ python -m venv .venv
 
 # Linux / macOS
 source .venv/bin/activate
+```
 
-3. Instalar as dependências
+**3. Instalar as dependências**
 
+```bash
 python -m pip install pandas numpy matplotlib scikit-learn
+```
 
-4. Executar a análise exploratória (TED 02)
+**4. Executar a análise exploratória (TED 02)**
 
-Com os 12 arquivos CSV do PNI 2025 na pasta data/raw/:
+Com os 12 arquivos CSV do PNI 2025 na pasta `data/raw/`:
 
+```bash
 python notebook/TED2/ted02_eda.py
+```
 
-Os resultados são salvos automaticamente em data/processed/.
+Os resultados são salvos automaticamente em `data/processed/`.
 
-5. Executar a modelagem (TED 03)
+**5. Executar a modelagem (TED 03)**
 
 A partir da pasta principal do projeto:
 
+```bash
 python notebook/TED3/ted03_modelagem.py
+```
 
-Os resultados são salvos em data/processed/TED3_resultados/.
+Os resultados são salvos em `data/processed/TED3_resultados/`.
 
-Dados brutos e GitHub
+## Dados brutos e GitHub
 
-Os arquivos mensais do PNI 2025 somam cerca de 107,7 GB e, por isso, não são armazenados no repositório. Eles devem ser baixados diretamente da fonte oficial e colocados em data/raw/:
+Os arquivos mensais do PNI 2025 somam cerca de 107,7 GB e, por isso, **não são armazenados no repositório**. Eles devem ser baixados diretamente da fonte oficial e colocados em `data/raw/`:
 
-https://dadosabertos.saude.gov.br/dataset/doses-aplicadas-pelo-programa-de-nacional-de-imunizacoes-pni-2025
+<https://dadosabertos.saude.gov.br/dataset/doses-aplicadas-pelo-programa-de-nacional-de-imunizacoes-pni-2025>
 
-O repositório concentra o código, os documentos, os resultados gerados e as instruções para reprodução da análise. A base preparada PNI_2025_preparado_github.csv, usada na modelagem da TED 03, está disponível no repositório.
+O repositório concentra o código, os documentos, os resultados gerados e as instruções para reprodução da análise. A base preparada `PNI_2025_preparado_github.csv`, usada na modelagem da TED 03, está disponível no repositório.
 
-Segurança e privacidade
+## Segurança e privacidade
 
 A base pública do PNI utilizada nesta etapa é diferente dos dados pessoais que poderão ser trabalhados futuramente pela UBS.
 
-No desenvolvimento do sistema, informações pessoais dos pacientes deverão receber tratamento adequado, com controle de acesso, medidas de segurança e atenção aos princípios da Lei Geral de Proteção de Dados (LGPD).
+No desenvolvimento do sistema, informações pessoais dos pacientes deverão receber tratamento adequado, com controle de acesso, medidas de segurança e atenção aos princípios da **Lei Geral de Proteção de Dados (LGPD)**.
 
-A base pública serve como referência para a estruturação dos dados e não deve ser tratada como cadastro de pacientes da UBS Centenário.
+A base pública serve como referência para a estruturação dos dados e **não deve ser tratada como cadastro de pacientes** da UBS Centenário.
 
-Considerações finais
+## Considerações finais
 
-• TED 01: seleção da fonte de dados (PNI 2025) e identificação dos atributos relevantes.
-• TED 02: processamento dos 12 arquivos mensais, totalizando 178.451.615 registros, com análise de vacinas, doses, idade, sexo, distribuição geográfica e qualidade dos dados.
-• TED 03: comparação de algoritmos de aprendizado de máquina. O Random Forest obteve o melhor resultado (F1 macro de 0,2875 na validação cruzada; acurácia de 47,60% e F1 macro de 0,3120 no teste), com diferenças importantes de desempenho entre as classes.
-• MVP: chatbot no Telegram que orienta sobre a próxima dose, responde dúvidas frequentes e envia lembretes automáticos.
+- **TED 01:** seleção da fonte de dados (PNI 2025) e identificação dos atributos relevantes.
+- **TED 02:** processamento dos 12 arquivos mensais, totalizando **178.451.615 registros**, com análise de vacinas, doses, idade, sexo, distribuição geográfica e qualidade dos dados.
+- **TED 03:** comparação de algoritmos de aprendizado de máquina. O Random Forest obteve o melhor resultado (F1 macro de 0,2875 na validação cruzada; acurácia de 47,60% e F1 macro de 0,3120 no teste), com diferenças importantes de desempenho entre as classes.
+- **MVP:** chatbot no Telegram que orienta sobre a próxima dose, responde dúvidas frequentes e envia lembretes automáticos.
 
-Os resultados do classificador representam uma etapa de aprendizado e avaliação técnica, não uma solução clínica pronta. Para o projeto VACINA, a abordagem mais adequada neste momento é manter a orientação do chatbot baseada em regras do calendário oficial, validadas pela equipe da UBS.
+Os resultados do classificador representam uma etapa de aprendizado e avaliação técnica, não uma solução clínica pronta. Para o projeto VACINA, a abordagem mais adequada neste momento é manter a orientação do chatbot **baseada em regras do calendário oficial, validadas pela equipe da UBS**.
 
-Referências
+## Referências
 
-• BRASIL. Ministério da Saúde. Portal de Dados Abertos do SUS – Doses aplicadas pelo Programa Nacional de Imunizações (PNI) – 2025. Brasília: Ministério da Saúde. Disponível em: https://dadosabertos.saude.gov.br/dataset/doses-aplicadas-pelo-programa-de-nacional-de-imunizacoes-pni-2025.
-• BRASIL. Ministério da Saúde. API de Dados Abertos – Vacinação. Brasília: Ministério da Saúde. Disponível em: https://apidadosabertos.saude.gov.br/vacinacao/doses-aplicadas-pni-2025.
-• BRASIL. Ministério da Saúde. Programa Nacional de Imunizações – PNI. Brasília: Ministério da Saúde.
+- BRASIL. Ministério da Saúde. **Portal de Dados Abertos do SUS – Doses aplicadas pelo Programa Nacional de Imunizações (PNI) – 2025**. Brasília: Ministério da Saúde. Disponível em: <https://dadosabertos.saude.gov.br/dataset/doses-aplicadas-pelo-programa-de-nacional-de-imunizacoes-pni-2025>.
+- BRASIL. Ministério da Saúde. **API de Dados Abertos – Vacinação**. Brasília: Ministério da Saúde. Disponível em: <https://apidadosabertos.saude.gov.br/vacinacao/doses-aplicadas-pni-2025>.
+- BRASIL. Ministério da Saúde. **Programa Nacional de Imunizações – PNI**. Brasília: Ministério da Saúde.
