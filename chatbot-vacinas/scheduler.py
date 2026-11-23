@@ -1,4 +1,4 @@
-"""Agendamento de lembretes no fuso local da UBS Centenário."""
+"""Agendamento de lembretes no fuso local da UBS Maria Luiza."""
 
 import logging
 import json
@@ -49,6 +49,13 @@ def agendar_lembrete(
     )
 
 
+def desagendar_lembrete(agendador: AsyncIOScheduler, lembrete_id: int) -> None:
+    """Remove o envio agendado, se ainda existir no agendador."""
+    job = agendador.get_job(f"vacina-lembrete-{lembrete_id}")
+    if job is not None:
+        job.remove()
+
+
 async def enviar_lembrete(
     bot: Bot,
     lembrete_id: int,
@@ -78,10 +85,10 @@ async def enviar_lembrete(
         else ""
     )
     mensagem = (
-        f"{prefixo}Lembrete da UBS Centenário: está prevista para "
+        f"{prefixo}Lembrete da UBS Maria Luiza: está prevista para "
         f"{lembrete.data_prevista:%d/%m/%Y} a próxima dose de {nome_vacina}. "
         "Esta mensagem é meramente informativa. A confirmação final deve ser "
-        "feita pela equipe da sala de vacina da UBS Centenário."
+        "feita pela equipe da sala de vacina da UBS Maria Luiza."
     )
     try:
         await bot.send_message(chat_id=lembrete.chat_id, text=mensagem)

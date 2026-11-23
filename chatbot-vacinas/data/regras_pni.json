@@ -1,38 +1,37 @@
 {
-  "versao_schema": 1,
-  "referencia_calendario": "Calendário Nacional de Vacinação (PNI)",
+  "versao_schema": 2,
+  "referencia_calendario": "Instrução Normativa do Calendário Nacional de Vacinação 2026 (4ª edição, 08/10/2026) – DPNI/SVSA/Ministério da Saúde",
   "status_validacao_clinica": "pendente_ubs",
   "liberado_para_uso_em_producao": false,
   "fonte_oficial": {
-    "orgao": "Ministério da Saúde do Brasil",
+    "orgao": "Ministério da Saúde do Brasil – Departamento do Programa Nacional de Imunizações",
+    "documento": "Instrução Normativa do Calendário Nacional de Vacinação – Ano 2026, 4ª edição, atualizada em 08/10/2026",
     "url": "https://www.gov.br/saude/pt-br/vacinacao",
-    "observacao": "Página oficial geral consultada; não contém a tabela técnica detalhada dos esquemas abaixo. Confirmar doses, intervalos e limites etários com a equipe da sala de vacina da UBS Centenário antes de qualquer uso clínico."
+    "observacao": "Esquemas da AGENDA OPORTUNA transcritos da Instrução Normativa. Regras de resgate de atraso, situações especiais (CRIE), gestantes e grupos prioritários não são calculadas automaticamente. A transcrição deve ser conferida pela equipe da sala de vacina antes do uso real."
   },
   "orientacao_segura": {
-    "aviso_obrigatorio": "Esta informação é meramente informativa. A confirmação final deve ser feita pela equipe da sala de vacina da UBS Centenário.",
-    "fora_do_escopo": "Não foi possível determinar a orientação com as regras cadastradas. Procure diretamente a sala de vacina da UBS Centenário para avaliação da carteira."
+    "aviso_obrigatorio": "Esta informação é meramente informativa. A confirmação final deve ser feita pela equipe da sala de vacina da UBS Maria Luiza.",
+    "fora_do_escopo": "Não foi possível determinar a orientação com as regras cadastradas. Procure diretamente a sala de vacina da UBS Maria Luiza para avaliação da carteira."
   },
   "regras_de_escopo": {
     "idade_fora_dos_limites": "encaminhar_para_ubs",
     "historico_incompleto_ou_inconsistente": "encaminhar_para_ubs",
     "esquema_nao_cadastrado": "encaminhar_para_ubs",
-    "observacao": "Não inferir doses ausentes, atrasos, contraindicações, esquemas especiais ou condutas de resgate. Esses casos exigem avaliação da equipe da UBS."
+    "dose_atrasada": "encaminhar_para_ubs",
+    "observacao": "A data prevista é a mais tardia entre a idade recomendada (agenda oportuna) e o intervalo recomendado desde a última dose. Não inferir doses ausentes, contraindicações, esquemas especiais ou condutas de resgate."
   },
   "vacinas": [
     {
       "id": "pentavalente",
-      "nome": "Pentavalente",
-      "publico": "infantil",
-      "idade_minima_meses": 0,
-      "idade_maxima_meses_exclusiva": 60,
+      "nome": "Pentavalente (DTP+HB+Hib)",
+      "publico": "crianças de 2 meses a 6 anos",
+      "idade_minima_meses": 1,
+      "idade_maxima_meses_exclusiva": 84,
       "esquema": {
-        "tipo": "serie_primaria_por_intervalo",
         "doses": [
           {
             "numero": 1,
-            "idade_alvo_meses": 2,
-            "intervalo_recomendado_dias": 0,
-            "intervalo_minimo_dias": 0
+            "idade_alvo_meses": 2
           },
           {
             "numero": 2,
@@ -48,23 +47,21 @@
           }
         ],
         "doses_adicionais": [],
-        "observacao": "Esquema de rotina preliminar. Atrasos, doses anteriores a idade/intervalo recomendado e esquemas de resgate devem ser encaminhados à UBS."
+        "mensagem_esquema_completo": "O esquema básico da pentavalente (3 doses) está completo. Os reforços seguintes são feitos com a vacina DTP, aos 15 meses e aos 4 anos de idade.",
+        "observacao": "Agenda oportuna: 2, 4 e 6 meses; intervalo de 60 dias. A 3ª dose não deve ser aplicada antes dos 6 meses."
       }
     },
     {
       "id": "vip",
       "nome": "Poliomielite inativada (VIP)",
-      "publico": "infantil",
-      "idade_minima_meses": 0,
+      "publico": "crianças de 2 meses a 4 anos",
+      "idade_minima_meses": 1,
       "idade_maxima_meses_exclusiva": 60,
       "esquema": {
-        "tipo": "serie_primaria_com_reforco",
         "doses": [
           {
             "numero": 1,
-            "idade_alvo_meses": 2,
-            "intervalo_recomendado_dias": 0,
-            "intervalo_minimo_dias": 0
+            "idade_alvo_meses": 2
           },
           {
             "numero": 2,
@@ -82,73 +79,245 @@
         "doses_adicionais": [
           {
             "numero": 4,
-            "tipo": "reforco",
-            "recorrente": false,
             "idade_alvo_meses": 15,
-            "intervalo_recomendado_dias": 270,
-            "intervalo_minimo_dias": 180
+            "intervalo_recomendado_meses": 6,
+            "tipo": "reforco"
+          },
+          {
+            "numero": 5,
+            "idade_alvo_meses": 48,
+            "intervalo_recomendado_meses": 6,
+            "tipo": "reforco"
           }
         ],
-        "observacao": "Esquema de rotina preliminar. Reforço e intervalos devem ser confirmados com a UBS; atrasos ou histórico incompleto não são calculados automaticamente."
+        "mensagem_esquema_completo": "O esquema da VIP (3 doses e 2 reforços) está completo.",
+        "observacao": "Agenda oportuna: 2, 4 e 6 meses; reforços aos 15 meses e aos 4 anos, com intervalo mínimo de 6 meses."
+      }
+    },
+    {
+      "id": "rotavirus",
+      "nome": "Rotavírus humano (VRH)",
+      "publico": "bebês de 1 mês e 15 dias a 23 meses",
+      "idade_minima_meses": 1,
+      "idade_maxima_meses_exclusiva": 24,
+      "esquema": {
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 2,
+            "idade_maxima_meses_exclusiva": 12
+          },
+          {
+            "numero": 2,
+            "idade_alvo_meses": 4,
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30,
+            "idade_maxima_meses_exclusiva": 24
+          }
+        ],
+        "doses_adicionais": [],
+        "mensagem_esquema_completo": "O esquema do rotavírus (2 doses) está completo.",
+        "observacao": "1ª dose de 1 mês e 15 dias até 11 meses e 29 dias; 2ª dose de 3 meses e 15 dias até 23 meses e 29 dias. Fora da janela a dose não é mais aplicada."
+      }
+    },
+    {
+      "id": "pneumococica",
+      "nome": "Pneumocócica conjugada (VPC 20 / VPC 10)",
+      "publico": "crianças de 2 meses a 4 anos",
+      "idade_minima_meses": 1,
+      "idade_maxima_meses_exclusiva": 60,
+      "esquema": {
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 2
+          },
+          {
+            "numero": 2,
+            "idade_alvo_meses": 4,
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          }
+        ],
+        "doses_adicionais": [
+          {
+            "numero": 3,
+            "idade_alvo_meses": 12,
+            "intervalo_recomendado_dias": 60,
+            "tipo": "reforco"
+          }
+        ],
+        "mensagem_esquema_completo": "O esquema da pneumocócica (2 doses e reforço) está completo.",
+        "observacao": "Fase de transição: 1ª dose com VPC 20, 2ª com VPC 10 e reforço aos 12 meses com VPC 20. A sala de vacina define o produto."
+      }
+    },
+    {
+      "id": "meningococica",
+      "nome": "Meningocócica C (reforço com ACWY)",
+      "publico": "crianças de 3 meses a 4 anos",
+      "idade_minima_meses": 2,
+      "idade_maxima_meses_exclusiva": 60,
+      "esquema": {
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 3
+          },
+          {
+            "numero": 2,
+            "idade_alvo_meses": 5,
+            "intervalo_recomendado_dias": 60,
+            "intervalo_minimo_dias": 30
+          }
+        ],
+        "doses_adicionais": [
+          {
+            "numero": 3,
+            "idade_alvo_meses": 12,
+            "intervalo_recomendado_dias": 60,
+            "tipo": "reforco",
+            "produto": "men ACWY"
+          }
+        ],
+        "mensagem_esquema_completo": "O esquema infantil da meningocócica está completo. Na adolescência (11 a 14 anos) há 1 dose de meningocócica ACWY.",
+        "observacao": "Esquema básico com men C aos 3 e 5 meses; reforço aos 12 meses com men ACWY."
+      }
+    },
+    {
+      "id": "febre_amarela",
+      "nome": "Febre amarela",
+      "publico": "crianças de 9 meses a 4 anos",
+      "idade_minima_meses": 9,
+      "idade_maxima_meses_exclusiva": 60,
+      "esquema": {
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 9
+          }
+        ],
+        "doses_adicionais": [
+          {
+            "numero": 2,
+            "idade_alvo_meses": 48,
+            "intervalo_recomendado_dias": 30,
+            "tipo": "reforco"
+          }
+        ],
+        "mensagem_esquema_completo": "O esquema da febre amarela (dose aos 9 meses e reforço aos 4 anos) está completo.",
+        "observacao": "A partir de 5 anos, a necessidade de dose depende do histórico e deve ser avaliada pela UBS."
+      }
+    },
+    {
+      "id": "triplice_viral",
+      "nome": "Tríplice viral (sarampo, caxumba e rubéola)",
+      "publico": "de 12 meses a 29 anos",
+      "idade_minima_meses": 12,
+      "idade_maxima_meses_exclusiva": 360,
+      "esquema": {
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 12
+          },
+          {
+            "numero": 2,
+            "idade_alvo_meses": 15,
+            "intervalo_recomendado_dias": 30,
+            "intervalo_minimo_dias": 15
+          }
+        ],
+        "doses_adicionais": [],
+        "mensagem_esquema_completo": "O esquema da tríplice viral (2 doses) está completo.",
+        "observacao": "Agenda oportuna aos 12 e 15 meses; de 12 meses a 29 anos são 2 doses com intervalo de 30 dias. De 30 a 59 anos, 1 dose (avaliar na UBS)."
+      }
+    },
+    {
+      "id": "varicela",
+      "nome": "Varicela (catapora)",
+      "publico": "crianças de 15 meses a 6 anos",
+      "idade_minima_meses": 12,
+      "idade_maxima_meses_exclusiva": 84,
+      "esquema": {
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 15
+          },
+          {
+            "numero": 2,
+            "idade_alvo_meses": 48,
+            "intervalo_recomendado_meses": 3
+          }
+        ],
+        "doses_adicionais": [],
+        "mensagem_esquema_completo": "O esquema da varicela (2 doses) está completo.",
+        "observacao": "Agenda oportuna aos 15 meses e aos 4 anos; intervalo de 3 meses entre as doses dos 1 aos 12 anos."
       }
     },
     {
       "id": "hepatite_b",
-      "nome": "Hepatite B",
-      "publico": "a partir de 7 anos",
+      "nome": "Hepatite B (a partir de 7 anos)",
+      "publico": "a partir de 7 anos sem esquema completo",
       "idade_minima_anos": 7,
-      "idade_maxima_anos": null,
       "esquema": {
-        "tipo": "serie_primaria_por_intervalo",
         "doses": [
           {
-            "numero": 1,
-            "marco": "dose_inicial",
-            "intervalo_recomendado_dias": 0,
-            "intervalo_minimo_dias": 0
+            "numero": 1
           },
           {
             "numero": 2,
-            "marco": "apos_dose_1",
-            "intervalo_recomendado_dias": 30,
-            "intervalo_minimo_dias": 30
+            "intervalo_recomendado_meses": 1
           },
           {
             "numero": 3,
-            "marco": "apos_dose_2",
-            "intervalo_recomendado_dias": 150,
-            "intervalo_minimo_dias": 60,
-            "intervalo_minimo_desde_dose_1_dias": 120
+            "intervalo_recomendado_meses": 5
           }
         ],
         "doses_adicionais": [],
-        "observacao": "Série preliminar de três doses; não inferir esquema completo ou necessidade de doses adicionais sem histórico confiável e avaliação da UBS."
+        "mensagem_esquema_completo": "O esquema da hepatite B (3 doses) está completo.",
+        "observacao": "Esquema 0, 1 e 6 meses. Não reiniciar o esquema. Menores de 7 anos completam a proteção com a pentavalente."
+      }
+    },
+    {
+      "id": "dengue",
+      "nome": "Dengue (DNG4)",
+      "publico": "de 10 a 14 anos",
+      "idade_minima_anos": 10,
+      "idade_maxima_meses_exclusiva": 180,
+      "esquema": {
+        "doses": [
+          {
+            "numero": 1,
+            "idade_alvo_meses": 120
+          },
+          {
+            "numero": 2,
+            "intervalo_recomendado_meses": 3
+          }
+        ],
+        "doses_adicionais": [],
+        "mensagem_esquema_completo": "O esquema da dengue (2 doses) está completo.",
+        "observacao": "2 doses com intervalo de 3 meses, entre 10 anos e 14 anos, 11 meses e 29 dias."
       }
     },
     {
       "id": "dt",
-      "nome": "Dupla Adulto (dT)",
+      "nome": "Dupla adulto (dT)",
       "publico": "a partir de 7 anos",
       "idade_minima_anos": 7,
-      "idade_maxima_anos": null,
       "esquema": {
-        "tipo": "serie_primaria_com_reforco",
         "doses": [
           {
-            "numero": 1,
-            "marco": "dose_inicial",
-            "intervalo_recomendado_dias": 0,
-            "intervalo_minimo_dias": 0
+            "numero": 1
           },
           {
             "numero": 2,
-            "marco": "apos_dose_1",
             "intervalo_recomendado_dias": 60,
             "intervalo_minimo_dias": 30
           },
           {
             "numero": 3,
-            "marco": "apos_dose_2",
             "intervalo_recomendado_dias": 60,
             "intervalo_minimo_dias": 30
           }
@@ -156,14 +325,12 @@
         "doses_adicionais": [
           {
             "numero": 4,
-            "tipo": "reforco",
-            "recorrente": true,
-            "intervalo_recomendado_dias": 3650,
             "intervalo_recomendado_anos": 10,
-            "observacao": "O valor em dias é apenas uma aproximação para testes; calcular dez anos-calendário com dateutil e validar a regra clínica antes do uso."
+            "tipo": "reforco",
+            "recorrente": true
           }
         ],
-        "observacao": "Série e reforço preliminares. Situações especiais, ferimentos, esquema anterior incompleto ou dose atrasada devem ser encaminhados à UBS."
+        "observacao": "3 doses com intervalo de 60 dias e reforço a cada 10 anos (antecipado para 5 anos em caso de risco, avaliado pela UBS). Gestantes seguem o esquema com dTpa."
       }
     }
   ]

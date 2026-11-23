@@ -1,7 +1,7 @@
 import bot
 
 
-def test_menu_principal_exibe_as_tres_acoes():
+def test_menu_principal_exibe_as_quatro_acoes():
     botoes = [
         botao
         for linha in bot._teclado_menu().inline_keyboard
@@ -12,11 +12,13 @@ def test_menu_principal_exibe_as_tres_acoes():
         "Próxima dose",
         "Perguntas frequentes",
         "Falar com a unidade",
+        "Como chegar",
     ]
     assert [botao.callback_data for botao in botoes] == [
         "proxima_dose",
         "faq",
         "unidade",
+        "localizacao",
     ]
 
 
@@ -40,3 +42,10 @@ def test_mensagem_de_contato_reserva_campo_para_contato_oficial():
 
 
 FAQ_CONTATO = bot.FAQ["contato_unidade"]
+
+
+def test_localizacao_da_ubs_esta_configurada():
+    local = bot.FAQ["localizacao"]
+    assert local["titulo"] == "UBS Maria Luiza"
+    assert -90 <= local["latitude"] <= 90
+    assert -180 <= local["longitude"] <= 180

@@ -53,26 +53,61 @@ def _resultado(
     )
 
 
-def _fora_da_faixa_etaria(
-    vacina: dict, nascimento: date, data_referencia: date
-) -> bool:
-    if "idade_maxima_meses_exclusiva" in vacina:
-        limite = nascimento + relativedelta(
-            months=vacina["idade_maxima_meses_exclusiva"]
-        )
-        return data_referencia < nascimento or data_referencia >= limite
-
-    idade_minima_anos = vacina.get("idade_minima_anos")
-    if idade_minima_anos is not None:
-        return data_referencia < nascimento + relativedelta(years=idade_minima_anos)
-    return data_referencia < nascimento
-
-
-def _proxima_data(data_ultima_dose: date, dose: dict) -> date:
-    anos = dose.get("intervalo_recomendado_anos")
+def _idade_limite(nascimento: date, regra: dict, prefixo: str) -> date | None:
+    """Converte campos como idade_minima_meses / idade_minima_anos em uma data."""
+    meses = regra.get(f"{prefixo}_meses")
+    anos = regra.get(f"{prefixo}_anos")
+    if meses is not None:
+        return nascimento + relativedelta(months=meses)
     if anos is not None:
-        return data_ultima_dose + relativedelta(years=anos)
-    return data_ultima_dose + timedelta(days=dose["intervalo_recomendado_dias"])
+        return nascimento + relativedelta(years=anos)
+    return None
+
+
+def _fora_da_faixa_etaria(
+    regra: dict, nascimento: date, data_referencia: date
+) -> bool:
+    """Verifica os limites de idade de uma vacina ou de uma dose específica.
+
+    O limite mínimo é inclusivo e o máximo é exclusivo (por exemplo, "até 4 anos,
+    11 meses e 29 dias" é cadastrado como idade_maxima_meses_exclusiva = 60).
+    """
+    if data_referencia < nascimento:
+        return True
+    minimo = _idade_limite(nascimento, regra, "idade_minima")
+    if minimo is not None and data_referencia < minimo:
+        return True
+    if regra.get("idade_maxima_meses_exclusiva") is not None:
+        maximo = nascimento + relativedelta(months=regra["idade_maxima_meses_exclusiva"])
+    elif regra.get("idade_maxima_anos_exclusiva") is not None:
+        maximo = nascimento + relativedelta(years=regra["idade_maxima_anos_exclusiva"])
+    else:
+        return False
+    return data_referencia >= maximo
+
+
+def _proxima_data(nascimento: date, data_ultima_dose: date, dose: dict) -> date:
+    """Data prevista = a mais tardia entre a idade-alvo e o intervalo desde a última dose.
+
+    Segue a lógica da "agenda oportuna" do PNI: quem está em dia toma na idade
+    recomendada; quem tomou a dose anterior com atraso respeita o intervalo.
+    """
+    if dose.get("intervalo_recomendado_anos") is not None:
+        pelo_intervalo = data_ultima_dose + relativedelta(
+            years=dose["intervalo_recomendado_anos"]
+        )
+    elif dose.get("intervalo_recomendado_meses") is not None:
+        pelo_intervalo = data_ultima_dose + relativedelta(
+            months=dose["intervalo_recomendado_meses"]
+        )
+    else:
+        pelo_intervalo = data_ultima_dose + timedelta(
+            days=dose.get("intervalo_recomendado_dias", 0)
+        )
+    idade_alvo = dose.get("idade_alvo_meses")
+    if idade_alvo is None:
+        return pelo_intervalo
+    return max(pelo_intervalo, nascimento + relativedelta(months=idade_alvo))
 
 
 def calcular_proxima_dose(
@@ -119,13 +154,8 @@ def calcular_proxima_dose(
             regras["orientacao_segura"]["fora_do_escopo"],
         )
 
-    if _fora_da_faixa_etaria(vacina, data_nascimento, data_atual):
-        return _resultado(
-            "encaminhar_ubs",
-            vacina_id,
-            regras,
-            regras["orientacao_segura"]["fora_do_escopo"],
-        )
+    # A idade atual não é verificada aqui: um esquema completo vale em qualquer
+    # idade, e a data prevista abaixo passa pelos limites e precisa estar no futuro.
     if _fora_da_faixa_etaria(vacina, data_nascimento, data_ultima_dose):
         return _resultado(
             "encaminhar_ubs",
@@ -135,48 +165,42 @@ def calcular_proxima_dose(
         )
 
     esquema = vacina["esquema"]
-    doses_primarias = esquema["doses"]
-    doses_adicionais = esquema.get("doses_adicionais", [])
-    quantidade_primaria = len(doses_primarias)
+    todas_as_doses = sorted(
+        esquema["doses"] + esquema.get("doses_adicionais", []),
+        key=lambda dose: dose["numero"],
+    )
+    reforco_recorrente = next(
+        (dose for dose in todas_as_doses if dose.get("recorrente")), None
+    )
+    proxima_dose = next(
+        (dose for dose in todas_as_doses if dose["numero"] == ultima_dose + 1), None
+    )
+    numero_seguinte = ultima_dose + 1
 
-    if ultima_dose < quantidade_primaria:
-        proxima_dose = doses_primarias[ultima_dose]
-    elif ultima_dose == quantidade_primaria:
-        if not doses_adicionais:
+    if proxima_dose is None:
+        if reforco_recorrente is not None and ultima_dose >= reforco_recorrente["numero"]:
+            proxima_dose = reforco_recorrente
+        elif ultima_dose == todas_as_doses[-1]["numero"]:
             return _resultado(
                 "esquema_completo",
                 vacina_id,
                 regras,
-                "O esquema cadastrado está completo.",
+                esquema.get(
+                    "mensagem_esquema_completo", "O esquema cadastrado está completo."
+                ),
             )
-        proxima_dose = doses_adicionais[0]
-    else:
-        reforco_recorrente = next(
-            (dose for dose in doses_adicionais if dose.get("recorrente")),
-            None,
-        )
-        if reforco_recorrente is None or ultima_dose < reforco_recorrente["numero"]:
-            if any(dose.get("numero") == ultima_dose for dose in doses_adicionais):
-                return _resultado(
-                    "esquema_completo",
-                    vacina_id,
-                    regras,
-                    "O esquema cadastrado está completo.",
-                )
+        else:
             return _resultado(
                 "encaminhar_ubs",
                 vacina_id,
                 regras,
                 regras["orientacao_segura"]["fora_do_escopo"],
             )
-        proxima_dose = reforco_recorrente
 
-    numero_seguinte = proxima_dose["numero"]
-    if proxima_dose.get("recorrente") and ultima_dose >= numero_seguinte:
-        numero_seguinte = ultima_dose + 1
-
-    data_prevista = _proxima_data(data_ultima_dose, proxima_dose)
-    if _fora_da_faixa_etaria(vacina, data_nascimento, data_prevista):
+    data_prevista = _proxima_data(data_nascimento, data_ultima_dose, proxima_dose)
+    if _fora_da_faixa_etaria(
+        vacina, data_nascimento, data_prevista
+    ) or _fora_da_faixa_etaria(proxima_dose, data_nascimento, data_prevista):
         return _resultado(
             "encaminhar_ubs",
             vacina_id,

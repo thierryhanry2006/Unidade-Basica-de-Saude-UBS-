@@ -201,3 +201,32 @@ def expirar_lembretes_vencidos(
             ],
         )
     return len(vencidos)
+
+
+def listar_lembretes_do_chat(
+    chat_id: int, *, caminho: Path = CAMINHO_BANCO_PADRAO
+) -> list[Lembrete]:
+    """Lista os lembretes pendentes de um único chat, do mais próximo ao mais distante."""
+    with _conexao(caminho) as conexao:
+        linhas = conexao.execute(
+            "SELECT * FROM lembretes WHERE chat_id = ? AND status = ? "
+            "ORDER BY data_lembrete",
+            (chat_id, STATUS_PENDENTE),
+        ).fetchall()
+    return [_mapear_lembrete(linha) for linha in linhas]
+
+
+def cancelar_lembrete(
+    lembrete_id: int, chat_id: int, *, caminho: Path = CAMINHO_BANCO_PADRAO
+) -> bool:
+    """Apaga um lembrete pendente, somente se ele pertencer ao chat informado.
+
+    O registro é removido em vez de marcado, para não guardar dados
+    que o usuário pediu para descartar.
+    """
+    with _conexao(caminho) as conexao:
+        cursor = conexao.execute(
+            "DELETE FROM lembretes WHERE id = ? AND chat_id = ? AND status = ?",
+            (lembrete_id, chat_id, STATUS_PENDENTE),
+        )
+    return cursor.rowcount == 1
