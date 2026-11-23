@@ -4,10 +4,10 @@
 
 Projeto desenvolvido nas disciplinas de **Inteligência Artificial** e **Big Data e Ciência de Dados**, tendo como referência a realidade da UBS Centenário, localizada no bairro Juá, em Riachão – Maranhão.
 
-
+| | |
 |---|---|
 | **Equipe** | Emilly Karoline Cunha Fernandes<br>Thierry Hanry Ribeiro da Silva Cardoso<br>Hágape Latan Mendonça de Sousa<br>César Kayoma Sousa de Oliveira |
-| **Orientador** | Alex Rogaleski Marques e Marcos David Souza Ramos |
+| **Orientador** | Alex Rogaleski Marques |
 | **Instituição** | UNIBALSAS – Balsas, Maranhão |
 | **Ano** | 2026 |
 
@@ -79,7 +79,7 @@ flowchart LR
 - idade;
 - informações relacionadas ao registro.
 
-> A utilização de OCR **não elimina a conferência humana**. A tecnologia será utilizada como apoio ao profissional, mantendo uma etapa de validação antes da confirmação.
+> **Atenção:** A utilização de OCR **não elimina a conferência humana**. A tecnologia será utilizada como apoio ao profissional, mantendo uma etapa de validação antes da confirmação.
 
 ---
 
@@ -442,7 +442,7 @@ O Random Forest foi o melhor algoritmo entre os avaliados, mas o desempenho não
 - confusão entre categorias;
 - uso de uma base nacional que não representa especificamente os pacientes da UBS Centenário.
 
-> O modelo **ainda não apresenta confiabilidade suficiente para uso operacional ou clínico**. A classificação não deve substituir a leitura dos documentos, a conferência profissional ou os protocolos oficiais de vacinação.
+> **Atenção:** O modelo **ainda não apresenta confiabilidade suficiente para uso operacional ou clínico**. A classificação não deve substituir a leitura dos documentos, a conferência profissional ou os protocolos oficiais de vacinação.
 
 ### Relação com o projeto VACINA
 
