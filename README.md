@@ -4,7 +4,7 @@
 
 Projeto desenvolvido nas disciplinas de **Inteligência Artificial** e **Big Data e Ciência de Dados**, tendo como referência a realidade da UBS Centenário, localizada no bairro Juá, em Riachão – Maranhão.
 
-| | |
+
 |---|---|
 | **Equipe** | Emilly Karoline Cunha Fernandes<br>Thierry Hanry Ribeiro da Silva Cardoso<br>Hágape Latan Mendonça de Sousa<br>César Kayoma Sousa de Oliveira |
 | **Orientador** | Alex Rogaleski Marques e Marcos David Souza Ramos |
@@ -79,7 +79,7 @@ flowchart LR
 - idade;
 - informações relacionadas ao registro.
 
-> ⚠️ A utilização de OCR **não elimina a conferência humana**. A tecnologia será utilizada como apoio ao profissional, mantendo uma etapa de validação antes da confirmação.
+> A utilização de OCR **não elimina a conferência humana**. A tecnologia será utilizada como apoio ao profissional, mantendo uma etapa de validação antes da confirmação.
 
 ---
 
