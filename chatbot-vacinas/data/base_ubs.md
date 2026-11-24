@@ -25,27 +25,57 @@
 - Para crianças: caderneta da criança e documento do responsável.
 - Exames e receitas anteriores, quando houver.
 
-## Serviços
-> Lista provisória com serviços comuns na Atenção Básica do SUS. [A CONFIRMAR]
-> quais destes a UBS Maria Luiza oferece, em quais dias e como agendar.
+## Quem é atendido (cadastro e território)
+- A UBS atende os moradores da sua área (bairro Centenário). Pessoas de outros
+  bairros não são atendidas nos serviços da UBS e devem procurar a UBS do próprio
+  bairro.
+- Exceção: a VACINAÇÃO atende qualquer pessoa, de qualquer bairro.
+- Para ser atendido é preciso ter cadastro na UBS. O cadastro é feito pelos agentes
+  comunitários de saúde, que vão até a casa da pessoa. Quem veio de outra cidade
+  também é cadastrado: o agente preenche uma ficha para concluir o cadastro.
 
-- Vacinação (calendário nacional e campanhas).
-- Consultas médicas e de enfermagem.
-- Pré-natal: acompanhamento da gestante. Quem descobrir a gravidez deve procurar a
-  recepção para iniciar o pré-natal o quanto antes, levando documento, Cartão do SUS
-  e a carteira de vacinação (as vacinas da gestação são avaliadas na 1ª consulta).
-- Acompanhamento de crianças (puericultura).
-- Acompanhamento de pessoas com hipertensão e diabetes.
-- Atendimento odontológico (saúde bucal).
-- Exame preventivo do colo do útero.
-- Testes rápidos (HIV, sífilis, hepatites).
-- Curativos e administração de medicamentos com receita.
-- Planejamento familiar.
-- Visitas dos agentes comunitários de saúde.
+## Equipes e agentes comunitários de saúde
+A UBS tem duas equipes. A equipe de cada pessoa é a do seu agente comunitário de
+saúde; quem não sabe qual é o seu agente pode perguntar na recepção.
+- Equipe 1 (atende de segunda a quinta): agentes Maria José (Zezé), Rosineia e
+  Alcilene.
+- Equipe 2 (atende de terça a sexta): agentes Sônia, Lourena, Valcilene, Juscinez,
+  Antônio Santana e Evadilene.
+- Para pedir visita do agente: cada agente tem um grupo de WhatsApp com as famílias
+  que acompanha; o pedido costuma ser feito por esse grupo.
+
+## Serviços da UBS
+- Vacinação (calendário nacional e campanhas), para qualquer pessoa.
+- Consultas médicas e de enfermagem (para moradores cadastrados).
+- Pré-natal: quem descobrir a gravidez deve procurar a UBS para iniciar o pré-natal
+  o quanto antes. Levar o exame de sangue e um documento (CPF ou Cartão do SUS, de
+  preferência o CPF). Levar também a carteira de vacinação: as vacinas da gestação
+  são avaliadas no início do pré-natal.
+- Acompanhamento de crianças.
+- Acompanhamento de pessoas com hipertensão e diabetes, incluindo a renovação de
+  receitas. Como solicitar a renovação: [A CONFIRMAR].
+- Dentista (saúde bucal): de segunda a quinta-feira, com agendamento. Em caso de
+  urgência odontológica, a pessoa é atendida mesmo sem agendamento. Como agendar:
+  [A CONFIRMAR].
+- Exame preventivo (colo do útero): às quintas-feiras.
+- Testes rápidos: todos os dias de funcionamento.
+- Curativos: todos os dias de funcionamento.
+- Teste do pezinho: todos os dias de funcionamento, mas cada equipe atende em seus
+  dias (equipe 1 de segunda a quinta; equipe 2 de terça a sexta). Por isso é
+  preciso saber qual é o agente de saúde da família.
+- Visitas dos agentes comunitários de saúde (pedido pelo grupo de WhatsApp do agente).
+- Planejamento familiar: [A CONFIRMAR].
+
+## Farmácia
+A UBS não tem farmácia. Para retirar medicamentos, a pessoa deve ir à farmácia do
+centro da cidade, levando a receita.
 
 ## Como agendar
 - Forma de agendamento de consultas: [A CONFIRMAR].
-- Renovação de receitas de uso contínuo: [A CONFIRMAR].
+
+## Encaminhamentos
+- Exames, especialistas, hospital ou pronto-atendimento mais próximo e CAPS:
+  nomes e endereços [A CONFIRMAR]. Até lá, oriente a pessoa a perguntar na recepção.
 
 ## Carteira de vacinação perdida
 Comparecer à sala de vacina com documento de identificação e Cartão do SUS para que

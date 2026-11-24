@@ -22,7 +22,7 @@ def test_menu_principal_exibe_as_quatro_acoes():
     ]
 
 
-def test_submenu_faq_tem_quatro_perguntas_editaveis_no_json():
+def test_submenu_faq_lista_as_perguntas_editaveis_no_json():
     perguntas = bot.FAQ["perguntas"]
     botoes = [
         botao
@@ -30,7 +30,7 @@ def test_submenu_faq_tem_quatro_perguntas_editaveis_no_json():
         for botao in linha
     ]
 
-    assert len(perguntas) == 4
+    assert len(perguntas) == 7
     assert [botao.text for botao in botoes[:-1]] == [
         item["pergunta"] for item in perguntas
     ]

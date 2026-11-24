@@ -16,6 +16,21 @@
       "resposta": "A UBS Maria Luiza fica na Avenida Principal, bairro Centenário, em Riachão - MA. Funciona de segunda a sexta-feira, das 08h às 12h e das 14h às 17h."
     },
     {
+      "id": "outro_bairro",
+      "pergunta": "Sou de outro bairro, posso ser atendido?",
+      "resposta": "A UBS Maria Luiza atende os moradores cadastrados do bairro Centenário. Quem mora em outro bairro deve procurar a UBS do seu bairro. A vacinação é a exceção: a sala de vacina atende qualquer pessoa, de qualquer bairro."
+    },
+    {
+      "id": "cadastro",
+      "pergunta": "Como faço meu cadastro na UBS?",
+      "resposta": "O cadastro é feito pelos agentes comunitários de saúde, que vão até a sua casa. Se você veio de outra cidade, o agente preenche uma ficha para concluir o cadastro. Se não sabe quem é o seu agente, pergunte na recepção da UBS."
+    },
+    {
+      "id": "farmacia",
+      "pergunta": "A UBS tem farmácia?",
+      "resposta": "Não. Para retirar medicamentos, vá à farmácia do centro da cidade levando a sua receita."
+    },
+    {
       "id": "duvida_clinica",
       "pergunta": "Tenho dúvidas sobre reações ou se posso tomar a vacina",
       "resposta": "Orientações sobre casos clínicos, febre, alergias ou contraindicações são exclusivas da equipe de saúde. Por favor, procure diretamente a sala de vacina da UBS Maria Luiza."
