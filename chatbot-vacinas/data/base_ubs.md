@@ -5,7 +5,9 @@
 
 ## Identificação e contato
 - Nome: UBS Maria Luiza (Unidade Básica de Saúde).
-- Endereço: Avenida Principal, bairro Centenário, Riachão – MA.
+- Endereço: Avenida Principal, bairro Juá, Riachão – MA.
+- O nome oficial do bairro é Juá, mas a população costuma chamá-lo de Centenário.
+  "Juá" e "Centenário" são o mesmo bairro.
 - Localização no mapa: o assistente pode enviar o mapa com a rota até a UBS.
 - Telefone/WhatsApp da recepção: [A CONFIRMAR].
 - Em caso de emergência (falta de ar, dor no peito, desmaio, sangramento intenso,
@@ -26,7 +28,8 @@
 - Exames e receitas anteriores, quando houver.
 
 ## Quem é atendido (cadastro e território)
-- A UBS atende os moradores da sua área (bairro Centenário). Pessoas de outros
+- A UBS atende os moradores da sua área: o bairro Juá, também chamado de
+  Centenário. Quem diz que mora no Juá ou no Centenário é da área. Pessoas de outros
   bairros não são atendidas nos serviços da UBS e devem procurar a UBS do próprio
   bairro.
 - Exceção: a VACINAÇÃO atende qualquer pessoa, de qualquer bairro.

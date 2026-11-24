@@ -13,12 +13,12 @@
     {
       "id": "local_horario",
       "pergunta": "Onde fica e qual o horário da UBS Maria Luiza?",
-      "resposta": "A UBS Maria Luiza fica na Avenida Principal, bairro Centenário, em Riachão - MA. Funciona de segunda a sexta-feira, das 08h às 12h e das 14h às 17h."
+      "resposta": "A UBS Maria Luiza fica na Avenida Principal, bairro Juá (também conhecido como Centenário), em Riachão - MA. Funciona de segunda a sexta-feira, das 08h às 12h e das 14h às 17h."
     },
     {
       "id": "outro_bairro",
       "pergunta": "Sou de outro bairro, posso ser atendido?",
-      "resposta": "A UBS Maria Luiza atende os moradores cadastrados do bairro Centenário. Quem mora em outro bairro deve procurar a UBS do seu bairro. A vacinação é a exceção: a sala de vacina atende qualquer pessoa, de qualquer bairro."
+      "resposta": "A UBS Maria Luiza atende os moradores cadastrados do bairro Juá, que muita gente chama de Centenário. Quem mora em outro bairro deve procurar a UBS do seu bairro. A vacinação é a exceção: a sala de vacina atende qualquer pessoa, de qualquer bairro."
     },
     {
       "id": "cadastro",
@@ -36,10 +36,10 @@
       "resposta": "Orientações sobre casos clínicos, febre, alergias ou contraindicações são exclusivas da equipe de saúde. Por favor, procure diretamente a sala de vacina da UBS Maria Luiza."
     }
   ],
-  "contato_unidade": "Para falar com a unidade, compareça à UBS Maria Luiza (Avenida Principal, bairro Centenário, Riachão - MA), de segunda a sexta, das 08h às 12h e das 14h às 17h. Recepção: [INSERIR TELEFONE/CONTATO OFICIAL].",
+  "contato_unidade": "Para falar com a unidade, compareça à UBS Maria Luiza, na Avenida Principal, bairro Juá (Centenário), em Riachão - MA, de segunda a sexta, das 08h às 12h e das 14h às 17h. Recepção: [INSERIR TELEFONE/CONTATO OFICIAL].",
   "localizacao": {
     "titulo": "UBS Maria Luiza",
-    "endereco": "Avenida Principal, bairro Centenário – Riachão, MA",
+    "endereco": "Avenida Principal, bairro Juá (Centenário) – Riachão, MA",
     "latitude": -7.355531351427655,
     "longitude": -46.6025169898485
   }

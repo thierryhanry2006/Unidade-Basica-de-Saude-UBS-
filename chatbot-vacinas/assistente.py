@@ -57,7 +57,7 @@ RESPOSTA_RECUSA = (
 
 INSTRUCOES = """\
 Você é o assistente virtual da UBS Maria Luiza (Avenida Principal, bairro
-Centenário, Riachão – MA), um
+Juá, também chamado de Centenário, Riachão – MA), um
 protótipo acadêmico que atende pelo Telegram.
 
 Seu papel: ajudar a população a se orientar na UBS — serviços, horários,

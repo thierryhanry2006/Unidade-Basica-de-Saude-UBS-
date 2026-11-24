@@ -205,7 +205,7 @@ class GeminiFalso:
 
 
 def test_gemini_responde_direto_e_guarda_turno(tmp_path):
-    modelo = GeminiFalso([_gemini_texto("A UBS fica no bairro Centenário.")])
+    modelo = GeminiFalso([_gemini_texto("A UBS fica no bairro Juá.")])
     assistente = AssistenteGemini(modelo, REGRAS, base_ubs="base de teste")
     memoria = Memoria()
 
@@ -213,7 +213,7 @@ def test_gemini_responde_direto_e_guarda_turno(tmp_path):
         assistente.responder("Onde fica a UBS?", memoria, _ctx(tmp_path))
     )
 
-    assert resposta == "A UBS fica no bairro Centenário."
+    assert resposta == "A UBS fica no bairro Juá."
     assert len(memoria.turnos) == 1
     instrucoes = modelo.chamadas[0][1].system_instruction
     assert "base de teste" in instrucoes
