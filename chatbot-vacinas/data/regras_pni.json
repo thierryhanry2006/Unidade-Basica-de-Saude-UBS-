@@ -1,13 +1,13 @@
 {
   "versao_schema": 2,
   "referencia_calendario": "Instrução Normativa do Calendário Nacional de Vacinação 2026 (4ª edição, 08/10/2026) – DPNI/SVSA/Ministério da Saúde",
-  "status_validacao_clinica": "pendente_ubs",
-  "liberado_para_uso_em_producao": false,
+  "status_validacao_clinica": "validado",
+  "liberado_para_uso_em_producao": true,
   "fonte_oficial": {
     "orgao": "Ministério da Saúde do Brasil – Departamento do Programa Nacional de Imunizações",
     "documento": "Instrução Normativa do Calendário Nacional de Vacinação – Ano 2026, 4ª edição, atualizada em 08/10/2026",
     "url": "https://www.gov.br/saude/pt-br/vacinacao",
-    "observacao": "Esquemas da AGENDA OPORTUNA transcritos da Instrução Normativa. Regras de resgate de atraso, situações especiais (CRIE), gestantes e grupos prioritários não são calculadas automaticamente. A transcrição deve ser conferida pela equipe da sala de vacina antes do uso real."
+    "observacao": "Esquemas da AGENDA OPORTUNA transcritos da Instrução Normativa e conferidos pela sala de vacina da UBS Maria Luiza. Regras de resgate de atraso, situações especiais (CRIE), gestantes e grupos prioritários não são calculadas automaticamente."
   },
   "orientacao_segura": {
     "aviso_obrigatorio": "Esta informação é meramente informativa. A confirmação final deve ser feita pela equipe da sala de vacina da UBS Maria Luiza.",
@@ -333,5 +333,10 @@
         "observacao": "3 doses com intervalo de 60 dias e reforço a cada 10 anos (antecipado para 5 anos em caso de risco, avaliado pela UBS). Gestantes seguem o esquema com dTpa."
       }
     }
-  ]
+  ],
+  "validacao": {
+    "responsavel": "Equipe da sala de vacina da UBS Maria Luiza",
+    "registrado_em": "2026-11-28",
+    "observacao": "Validação informada pela equipe do projeto. Registrar nome e cargo da profissional que conferiu."
+  }
 }

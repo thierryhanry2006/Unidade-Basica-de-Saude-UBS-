@@ -132,13 +132,13 @@ def _teclado_faq() -> InlineKeyboardMarkup:
 def _mensagem_boas_vindas(com_assistente: bool = False) -> str:
     if com_assistente:
         return (
-            "Olá! Sou o assistente virtual da UBS Maria Luiza (protótipo). "
+            "Olá! Sou o assistente virtual da UBS Maria Luiza. "
             "Pode me escrever ou mandar um áudio com sua dúvida sobre a UBS ou "
             "sobre vacinas, ou usar os botões abaixo. "
             "Não envie nome, CPF ou outros dados de identificação."
         )
     return (
-        "Olá! Sou o protótipo VACINA da UBS Maria Luiza. "
+        "Olá! Sou o assistente VACINA da UBS Maria Luiza. "
         "Não envie nome, CPF ou outros dados de identificação. "
         "Para simular uma orientação, use os botões abaixo."
     )

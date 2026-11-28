@@ -43,7 +43,7 @@ def test_calcula_data_da_proxima_dose(
     assert resultado.status == "proxima_dose"
     assert resultado.dose_seguinte == dose_seguinte
     assert resultado.data_proxima_dose == data_esperada
-    assert resultado.validacao_clinica_pendente is True
+    assert resultado.validacao_clinica_pendente is False
     assert "meramente informativa" in resultado.aviso_seguranca
 
 

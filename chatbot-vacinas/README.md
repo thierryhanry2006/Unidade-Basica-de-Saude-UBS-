@@ -67,16 +67,16 @@ melhorar seus modelos: use apenas dados fictícios nos testes.
   do Calendário Nacional de Vacinação 2026 (4ª edição, 08/10/2026) e cobrem 11
   vacinas: pentavalente, VIP, rotavírus, pneumocócica, meningocócica C/ACWY,
   febre amarela, tríplice viral, varicela, hepatite B (a partir de 7 anos),
-  dengue e dT. A transcrição ainda precisa ser conferida pela sala de vacina:
-  `status_validacao_clinica` está como `pendente_ubs` e
-  `liberado_para_uso_em_producao` está como `false`.
+  dengue e dT. A transcrição foi conferida pela sala de vacina da UBS:
+  `status_validacao_clinica` está como `validado` e
+  `liberado_para_uso_em_producao` como `true`.
 - A data prevista é a mais tardia entre a idade recomendada (agenda oportuna)
   e o intervalo desde a última dose. Doses atrasadas, situações especiais,
   gestantes e grupos prioritários são encaminhados à UBS.
-- Sem `VACINA_MODO_TESTE=1`, o bot não calcula nem recomenda datas enquanto as
-  regras não forem validadas pela equipe da UBS.
-- Com `VACINA_MODO_TESTE=1`, o bot pode calcular e enviar mensagens reais à
-  conta Telegram conectada, identificando o resultado como simulação.
+- Com as regras validadas, o bot calcula datas sem precisar de
+  `VACINA_MODO_TESTE`. Se `liberado_para_uso_em_producao` voltar a `false`, o
+  cálculo é bloqueado, exceto com `VACINA_MODO_TESTE=1` (resultado marcado
+  como simulação).
 - O FAQ e os dados de contato são editáveis em `data/faq.json`; endereço e
   horário já são os oficiais, mas o telefone ainda está pendente.
 - A classificação PLN identifica somente a intenção da mensagem

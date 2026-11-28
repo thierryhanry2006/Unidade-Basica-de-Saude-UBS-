@@ -46,21 +46,21 @@ def test_declaracoes_cobrem_todas_as_ferramentas_executaveis():
 
 
 def test_calculo_bloqueado_sem_modo_teste_enquanto_regras_nao_validadas(banco):
-    resultado = ferramentas.executar(
-        "calcular_proxima_dose", _args_penta(), _ctx(banco, modo_teste=False)
-    )
+    ctx = _ctx(banco, modo_teste=False)
+    ctx.regras = {**REGRAS, "liberado_para_uso_em_producao": False}
+    resultado = ferramentas.executar("calcular_proxima_dose", _args_penta(), ctx)
     assert resultado["status"] == "bloqueado"
     assert "data_prevista" not in resultado
 
 
-def test_calculo_usa_motor_de_regras_e_marca_simulacao(banco):
+def test_calculo_usa_motor_de_regras_validadas(banco):
     ctx = _ctx(banco)
     resultado = ferramentas.executar("calcular_proxima_dose", _args_penta(), ctx)
 
     assert resultado["status"] == "proxima_dose"
     assert resultado["dose_seguinte"] == 2
     assert resultado["data_prevista"] == (HOJE + timedelta(days=50)).isoformat()
-    assert resultado["simulacao"] is True
+    assert resultado["simulacao"] is False
     assert resultado["aviso_obrigatorio"]
     assert ctx.doses_calculadas["pentavalente"] == HOJE + timedelta(days=50)
 

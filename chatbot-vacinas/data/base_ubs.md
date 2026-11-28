@@ -11,14 +11,14 @@
 - Localização no mapa: o assistente pode enviar o mapa com a rota até a UBS.
 - Telefone/WhatsApp da recepção: [A CONFIRMAR].
 - Em caso de emergência (falta de ar, dor no peito, desmaio, sangramento intenso,
-  convulsão, acidente): ligar 192 (SAMU) ou procurar o pronto-atendimento/hospital
-  mais próximo. A UBS não é serviço de emergência.
+  convulsão, acidente): ligar 192 (SAMU) ou procurar o Hospital Municipal de
+  Riachão. A UBS não é serviço de emergência.
 
 ## Horário de funcionamento
 - Segunda a sexta-feira, das 08h às 12h e das 14h às 17h.
 - Fechada aos sábados, domingos e feriados. Entre 12h e 14h não há atendimento.
-- Sala de vacina: segue o horário da unidade; se há horário próprio ou dias
-  específicos para alguma vacina (ex.: BCG): [A CONFIRMAR].
+- Sala de vacina: segue o horário da unidade. Não há dia específico para nenhuma
+  vacina: todas são aplicadas em qualquer dia de funcionamento.
 
 ## O que levar ao atendimento
 - Para se vacinar: basta um documento pessoal, de preferência o CPF (ou o Cartão do
@@ -130,14 +130,15 @@ Dentistas Ildeane e Flávio:
   terça à tarde (enfermeira); Equipe 2 na quarta de manhã (médico).
 - Hipertensão e diabetes (hiperdia): Equipe 1 na segunda (enfermeira, manhã e tarde)
   e na quarta à tarde (médica); Equipe 2 na quarta de manhã (médico).
-- Renovação de receitas: Equipe 1 na sexta de manhã, com a médica. Equipe 2:
-  [A CONFIRMAR].
+- Renovação de receitas: Equipe 1 na sexta de manhã, com a médica. Para a Equipe 2
+  e para saber o que levar, a pessoa deve se informar na recepção da UBS.
 - Exame preventivo (PCCU): Equipe 1 na terça de manhã; Equipe 2 na quinta de manhã.
-- Inserção de DIU (planejamento familiar): Equipe 1 na quinta à tarde. Outros métodos
-  de planejamento familiar e a Equipe 2: [A CONFIRMAR].
-- Dentista (saúde bucal): Equipe 1 com agendamento na quarta e quinta; Equipe 2 com
-  agendamento na segunda e terça. Urgências odontológicas são atendidas mesmo sem
-  agendamento, inclusive na sexta-feira (as duas equipes).
+- Inserção de DIU (planejamento familiar): Equipe 1 na quinta à tarde. Para a
+  Equipe 2 e outros métodos de planejamento familiar, a pessoa deve se informar na
+  recepção da UBS.
+- Dentista (saúde bucal): Equipe 1 na quarta e quinta; Equipe 2 na segunda e terça.
+  O atendimento é por ordem de chegada. Urgências odontológicas são atendidas mesmo
+  sem agendamento, inclusive na sexta-feira (as duas equipes).
 - Testes rápidos: todos os dias de funcionamento.
 - Curativos: todos os dias de funcionamento.
 - Teste do pezinho: todos os dias de funcionamento, mas cada equipe atende em seus
@@ -156,8 +157,10 @@ centro da cidade, levando a receita.
 - As consultas são agendadas no dia da equipe do agente de saúde da pessoa.
 
 ## Encaminhamentos
-- Exames, especialistas, hospital ou pronto-atendimento mais próximo e CAPS:
-  nomes e endereços [A CONFIRMAR]. Até lá, oriente a pessoa a perguntar na recepção.
+- Para exames, especialistas, urgências e outros atendimentos que a UBS não faz, a
+  orientação é procurar o Hospital Municipal de Riachão.
+- Para detalhes de um encaminhamento específico, a pessoa pode se informar na
+  recepção da UBS.
 
 ## Carteira de vacinação perdida
 Comparecer à sala de vacina com documento de identificação e Cartão do SUS para que
