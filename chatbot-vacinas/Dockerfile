@@ -10,7 +10,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY *.py ./
-COPY data/*.json data/*.md ./data/
+COPY data/*.json data/*.md data/*.jpg ./data/
 
 # /data recebe o volume persistente com o SQLite. O processo roda como root
 # porque volumes do Railway são montados com dono root.

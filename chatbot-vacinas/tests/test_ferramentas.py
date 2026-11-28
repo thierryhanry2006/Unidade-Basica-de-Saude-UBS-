@@ -130,3 +130,10 @@ def test_enviar_localizacao_marca_pedido_de_mapa(banco):
     resultado = ferramentas.executar("enviar_localizacao", {}, ctx)
     assert "mapa" in resultado["status"]
     assert ctx.localizacao_solicitada is True
+
+
+def test_enviar_foto_caderneta_marca_pedido_de_foto(banco):
+    ctx = _ctx(banco)
+    resultado = ferramentas.executar("enviar_foto_caderneta", {}, ctx)
+    assert "caderneta" in resultado["status"]
+    assert ctx.caderneta_solicitada is True

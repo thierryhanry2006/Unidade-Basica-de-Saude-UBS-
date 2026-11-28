@@ -3,7 +3,7 @@
     {
       "id": "documentos",
       "pergunta": "O que levar para tomar vacina?",
-      "resposta": "Leve um documento de identificação com foto, CPF ou Cartão do SUS e, principalmente, a caderneta/carteira de vacinação."
+      "resposta": "Para se vacinar, leve um documento pessoal, de preferência o CPF (ou o Cartão do SUS), e a sua carteira de vacinação. Para crianças, leve a Caderneta da Criança, onde ficam registradas as vacinas e as consultas."
     },
     {
       "id": "carteira_perdida",
@@ -17,8 +17,8 @@
     },
     {
       "id": "outro_bairro",
-      "pergunta": "Sou de outro bairro, posso ser atendido?",
-      "resposta": "A UBS Maria Luiza atende os moradores cadastrados do bairro Juá, que muita gente chama de Centenário. Quem mora em outro bairro deve procurar a UBS do seu bairro. A vacinação é a exceção: a sala de vacina atende qualquer pessoa, de qualquer bairro."
+      "pergunta": "Quais bairros a UBS atende?",
+      "resposta": "A UBS Maria Luiza atende os moradores cadastrados dos bairros Juá (Centenário) e São João (Equipe 1) e Raimundo Boterio, Nova Primavera, Nova Esperança e Primavera (Equipe 2). Quem mora em outro bairro deve procurar a UBS do seu bairro. A vacinação é a exceção: a sala de vacina atende qualquer pessoa, de qualquer bairro."
     },
     {
       "id": "cadastro",
@@ -29,6 +29,13 @@
       "id": "farmacia",
       "pergunta": "A UBS tem farmácia?",
       "resposta": "Não. Para retirar medicamentos, vá à farmácia do centro da cidade levando a sua receita."
+    },
+    {
+      "id": "caderneta",
+      "pergunta": "O que é a Caderneta da Criança?",
+      "resposta": "A Caderneta da Criança é a carteirinha do Ministério da Saúde que acompanha a criança. Nela são registradas as consultas de puericultura (acompanhamento do crescimento), que a criança faz até os 2 anos, num total de 9 consultas, e também todas as vacinas. Leve a caderneta sempre que a criança for à UBS.",
+      "imagem": "caderneta_crianca.jpg",
+      "legenda_imagem": "Caderneta da Criança (Ministério da Saúde): versão menina (lilás) e versão menino (verde)."
     },
     {
       "id": "duvida_clinica",

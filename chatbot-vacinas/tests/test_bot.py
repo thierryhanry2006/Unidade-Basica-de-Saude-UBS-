@@ -30,7 +30,7 @@ def test_submenu_faq_lista_as_perguntas_editaveis_no_json():
         for botao in linha
     ]
 
-    assert len(perguntas) == 7
+    assert len(perguntas) == 8
     assert [botao.text for botao in botoes[:-1]] == [
         item["pergunta"] for item in perguntas
     ]
@@ -49,3 +49,9 @@ def test_localizacao_da_ubs_esta_configurada():
     assert local["titulo"] == "UBS Maria Luiza"
     assert -90 <= local["latitude"] <= 90
     assert -180 <= local["longitude"] <= 180
+
+
+def test_imagens_citadas_no_faq_existem():
+    for item in bot.FAQ["perguntas"]:
+        if item.get("imagem"):
+            assert (bot.ROOT_DIR / "data" / item["imagem"]).exists()

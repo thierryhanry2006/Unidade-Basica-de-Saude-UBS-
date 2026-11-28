@@ -30,6 +30,8 @@ class ContextoExecucao:
     hoje: date | None = None
     # Marcado pela ferramenta enviar_localizacao; o bot envia o mapa depois do texto.
     localizacao_solicitada: bool = False
+    # Marcado pela ferramenta enviar_foto_caderneta; o bot envia a foto depois do texto.
+    caderneta_solicitada: bool = False
 
 
 def _ids_vacinas(regras: dict) -> list[str]:
@@ -103,6 +105,16 @@ def declaracoes(regras: dict) -> list[dict]:
                 "Envia ao usuário o mapa com a localização da UBS, que abre no app "
                 "de mapas para traçar a rota. Use quando a pessoa perguntar onde "
                 "fica a UBS ou como chegar. O mapa aparece logo após sua resposta."
+            ),
+            "parameters_json_schema": {"type": "object", "properties": {}},
+        },
+        {
+            "name": "enviar_foto_caderneta",
+            "description": (
+                "Envia ao usuário a foto da Caderneta da Criança do Ministério da "
+                "Saúde (versões menina e menino). Use quando a pessoa perguntar sobre "
+                "a caderneta ou carteirinha da criança. A foto aparece logo após sua "
+                "resposta."
             ),
             "parameters_json_schema": {"type": "object", "properties": {}},
         },
@@ -248,11 +260,17 @@ def _localizacao(ctx: ContextoExecucao, args: dict) -> dict:
     return {"status": "o mapa da UBS será enviado logo após a sua resposta"}
 
 
+def _caderneta(ctx: ContextoExecucao, args: dict) -> dict:
+    ctx.caderneta_solicitada = True
+    return {"status": "a foto da caderneta será enviada logo após a sua resposta"}
+
+
 _FUNCOES = {
     "calcular_proxima_dose": _calcular,
     "agendar_lembrete": _agendar,
     "listar_meus_lembretes": _listar,
     "enviar_localizacao": _localizacao,
+    "enviar_foto_caderneta": _caderneta,
     "cancelar_lembrete": _cancelar,
 }
 

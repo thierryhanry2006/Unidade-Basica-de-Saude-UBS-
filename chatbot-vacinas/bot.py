@@ -73,6 +73,21 @@ def _teclado_menu() -> InlineKeyboardMarkup:
     )
 
 
+LEGENDA_CADERNETA = (
+    "Caderneta da Criança (Ministério da Saúde): versão menina (lilás) e "
+    "versão menino (verde)."
+)
+
+
+async def _enviar_foto(mensagem, nome_arquivo: str, legenda: str) -> None:
+    caminho = ROOT_DIR / "data" / nome_arquivo
+    if not caminho.exists():
+        LOGGER.warning("Imagem %s não encontrada.", nome_arquivo)
+        return
+    with caminho.open("rb") as arquivo:
+        await mensagem.reply_photo(photo=arquivo, caption=legenda)
+
+
 async def _enviar_mapa(mensagem) -> None:
     """Envia o pino da UBS, que abre no app de mapas do celular."""
     local = FAQ.get("localizacao")
@@ -187,6 +202,10 @@ async def _conversar_com_ia(
         )
     if ctx.localizacao_solicitada:
         await _enviar_mapa(update.effective_message)
+    if ctx.caderneta_solicitada:
+        await _enviar_foto(
+            update.effective_message, "caderneta_crianca.jpg", LEGENDA_CADERNETA
+        )
 
 
 async def iniciar(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -548,6 +567,10 @@ async def responder_faq(
         )
     else:
         await query.message.reply_text(item["resposta"])
+        if item.get("imagem"):
+            await _enviar_foto(
+                query.message, item["imagem"], item.get("legenda_imagem", "")
+            )
     await query.message.reply_text(
         "Perguntas frequentes:",
         reply_markup=_teclado_faq(),

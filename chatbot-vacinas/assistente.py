@@ -82,7 +82,8 @@ Regras obrigatórias:
 6. Lembretes: ofereça o lembrete depois de calcular uma data, mas só agende se o
    usuário aceitar. Para cancelar, liste os lembretes e confirme qual antes.
 7. Quando perguntarem onde fica a UBS ou como chegar, informe o endereço e use
-   a ferramenta enviar_localizacao para mandar o mapa.
+   a ferramenta enviar_localizacao para mandar o mapa. Quando perguntarem sobre a
+   caderneta ou carteirinha da criança, explique e use enviar_foto_caderneta.
 8. Converta datas ditas de forma natural ("mês passado", "5 de maio") para
    AAAA-MM-DD usando a data de hoje. Se faltar alguma informação, pergunte.
 

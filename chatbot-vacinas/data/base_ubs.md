@@ -21,17 +21,33 @@
   específicos para alguma vacina (ex.: BCG): [A CONFIRMAR].
 
 ## O que levar ao atendimento
-- Documento de identificação com foto.
-- Cartão Nacional de Saúde (Cartão do SUS) ou CPF.
-- Para vacinação: a caderneta/carteira de vacinação.
-- Para crianças: caderneta da criança e documento do responsável.
-- Exames e receitas anteriores, quando houver.
+- Para se vacinar: basta um documento pessoal, de preferência o CPF (ou o Cartão do
+  SUS), e a carteira de vacinação.
+- Para crianças: a Caderneta da Criança (onde ficam registradas as vacinas e as
+  consultas) e o documento do responsável.
+- Nas consultas: documento (CPF ou Cartão do SUS) e exames e receitas anteriores,
+  quando houver.
+
+## Caderneta da Criança
+- É a carteirinha do Ministério da Saúde que acompanha a criança ("Caderneta da
+  Criança – Passaporte da Cidadania"), com versão menina (capa lilás) e versão
+  menino (capa verde).
+- Nela são registradas as consultas de puericultura (acompanhamento do crescimento
+  e da saúde), que a criança faz até os 2 anos, num total de 9 consultas, e também
+  todas as vacinas.
+- Deve ser levada sempre que a criança for à UBS, inclusive para vacinar.
+- O assistente pode enviar a foto da caderneta para a pessoa reconhecê-la.
 
 ## Quem é atendido (cadastro e território)
-- A UBS atende os moradores da sua área: o bairro Juá, também chamado de
-  Centenário. Quem diz que mora no Juá ou no Centenário é da área. Pessoas de outros
-  bairros não são atendidas nos serviços da UBS e devem procurar a UBS do próprio
-  bairro.
+- A UBS atende os moradores dos bairros da sua área:
+  - Equipe 1: Juá (também chamado de Centenário) e São João.
+  - Equipe 2: Raimundo Boterio, Nova Primavera, Nova Esperança e Primavera.
+- Quem diz que mora no Juá ou no Centenário é da área (é o mesmo bairro).
+- Moradores de bairros fora dessa lista não são atendidos nos serviços da UBS e
+  devem procurar a UBS do próprio bairro.
+- O atendimento é organizado pelo agente comunitário de saúde que atua na rua da
+  pessoa: na recepção, a pessoa informa quem é o seu agente e é direcionada à equipe
+  certa. Quem não sabe o nome do agente pode informar o bairro e a rua.
 - Exceção: a VACINAÇÃO atende qualquer pessoa, de qualquer bairro.
 - Para ser atendido é preciso ter cadastro na UBS. O cadastro é feito pelos agentes
   comunitários de saúde, que vão até a casa da pessoa. Quem veio de outra cidade
@@ -39,42 +55,105 @@
 
 ## Equipes e agentes comunitários de saúde
 A UBS tem duas equipes. A equipe de cada pessoa é a do seu agente comunitário de
-saúde; quem não sabe qual é o seu agente pode perguntar na recepção.
-- Equipe 1 (atende de segunda a quinta): agentes Maria José (Zezé), Rosineia e
+saúde (ACS); quem não sabe qual é o seu agente pode perguntar na recepção.
+- Equipe 1 (bairros Juá/Centenário e São João; atende de segunda a quinta, com
+  dentista também na sexta para urgências): agentes Maria José (Zezé), Rosineia e
   Alcilene.
-- Equipe 2 (atende de terça a sexta): agentes Sônia, Lourena, Valcilene, Juscinez,
-  Antônio Santana e Evadilene.
+- Equipe 2 (bairros Raimundo Boterio, Nova Primavera, Nova Esperança e Primavera;
+  atende de terça a sexta, com dentista na segunda e terça): agentes Sônia, Lourena,
+  Valcilene, Juscinez, Antônio Santana e Evadilene.
 - Para pedir visita do agente: cada agente tem um grupo de WhatsApp com as famílias
   que acompanha; o pedido costuma ser feito por esse grupo.
 
-## Serviços da UBS
-- Vacinação (calendário nacional e campanhas), para qualquer pessoa.
-- Consultas médicas e de enfermagem (para moradores cadastrados).
-- Pré-natal: quem descobrir a gravidez deve procurar a UBS para iniciar o pré-natal
-  o quanto antes. Levar o exame de sangue e um documento (CPF ou Cartão do SUS, de
-  preferência o CPF). Levar também a carteira de vacinação: as vacinas da gestação
-  são avaliadas no início do pré-natal.
-- Acompanhamento de crianças.
-- Acompanhamento de pessoas com hipertensão e diabetes, incluindo a renovação de
-  receitas. Como solicitar a renovação: [A CONFIRMAR].
-- Dentista (saúde bucal): de segunda a quinta-feira, com agendamento. Em caso de
-  urgência odontológica, a pessoa é atendida mesmo sem agendamento. Como agendar:
+Termos usados no cronograma (explique com estas palavras, sem siglas):
+- Hiperdia: acompanhamento de pessoas com hipertensão (pressão alta) e diabetes.
+- Preventivo (PCCU): exame preventivo do câncer do colo do útero.
+- Puericultura: acompanhamento do crescimento e da saúde das crianças.
+- Demanda espontânea: atendimento sem agendamento, por ordem de chegada.
+- Pré-natal: acompanhamento das gestantes.
+
+## Cronograma semanal da Equipe 1
+Agentes: Zezé, Rosineia e Alcilene.
+
+Médica Heloísa (consultas agendadas):
+- Segunda: manhã consulta geral; tarde consulta geral e puericultura.
+- Terça: manhã e tarde consulta geral.
+- Quarta: manhã pré-natal (gestantes); tarde consulta geral e hiperdia.
+- Quinta: manhã visitas domiciliares; tarde inserção de DIU.
+- Sexta: manhã renovação de receitas; tarde folga.
+
+Enfermeira Graziela:
+- Segunda: manhã e tarde demanda espontânea e hiperdia.
+- Terça: manhã exame preventivo; tarde demanda espontânea e puericultura.
+- Quarta: manhã e tarde pré-natal (gestantes).
+- Quinta: manhã visitas domiciliares; tarde inserção de DIU.
+- Sexta: folga.
+
+Dentistas Divina e Flávio:
+- Segunda e terça: folga.
+- Quarta e quinta (manhã e tarde): agendamentos e urgências/emergências.
+- Sexta (manhã e tarde): somente urgências/emergências.
+
+## Cronograma semanal da Equipe 2
+Agentes: Antônio Santana, Evadilene, Juscinez, Lourena, Sônia e Valcilene.
+
+Médico Emerson (consultas agendadas):
+- Segunda: folga.
+- Terça: manhã consulta geral; tarde visitas domiciliares.
+- Quarta: manhã puericultura e hiperdia; tarde consulta geral.
+- Quinta: manhã consulta geral; tarde pré-natal (gestantes).
+- Sexta: folga.
+
+Enfermeira Karine:
+- Segunda: folga.
+- Terça: manhã demanda espontânea; tarde visitas domiciliares.
+- Quarta: manhã e tarde demanda espontânea.
+- Quinta: manhã exame preventivo; tarde pré-natal (gestantes).
+- Sexta: manhã e tarde demanda espontânea.
+
+Dentistas Ildeane e Flávio:
+- Segunda e terça (manhã e tarde): agendamentos e urgências/emergências.
+- Quarta e quinta: folga.
+- Sexta (manhã e tarde): somente urgências/emergências.
+
+## Serviços da UBS (resumo por serviço)
+- Vacinação (calendário nacional e campanhas), para qualquer pessoa, de qualquer bairro.
+- Consultas médicas e de enfermagem: para moradores cadastrados, no dia da equipe
+  do seu agente de saúde (veja os cronogramas acima).
+- Pré-natal: Equipe 1 na quarta (médica de manhã; enfermeira manhã e tarde);
+  Equipe 2 na quinta à tarde (médico e enfermeira). Quem descobrir a gravidez deve
+  procurar a UBS para iniciar o pré-natal o quanto antes. Levar o exame de sangue e um
+  documento (CPF ou Cartão do SUS, de preferência o CPF). Levar também a carteira de
+  vacinação: as vacinas da gestação são avaliadas no início do pré-natal.
+- Acompanhamento de crianças (puericultura): consultas até os 2 anos, 9 no total,
+  registradas na Caderneta da Criança. Equipe 1 na segunda à tarde (médica) e na
+  terça à tarde (enfermeira); Equipe 2 na quarta de manhã (médico).
+- Hipertensão e diabetes (hiperdia): Equipe 1 na segunda (enfermeira, manhã e tarde)
+  e na quarta à tarde (médica); Equipe 2 na quarta de manhã (médico).
+- Renovação de receitas: Equipe 1 na sexta de manhã, com a médica. Equipe 2:
   [A CONFIRMAR].
-- Exame preventivo (colo do útero): às quintas-feiras.
+- Exame preventivo (PCCU): Equipe 1 na terça de manhã; Equipe 2 na quinta de manhã.
+- Inserção de DIU (planejamento familiar): Equipe 1 na quinta à tarde. Outros métodos
+  de planejamento familiar e a Equipe 2: [A CONFIRMAR].
+- Dentista (saúde bucal): Equipe 1 com agendamento na quarta e quinta; Equipe 2 com
+  agendamento na segunda e terça. Urgências odontológicas são atendidas mesmo sem
+  agendamento, inclusive na sexta-feira (as duas equipes).
 - Testes rápidos: todos os dias de funcionamento.
 - Curativos: todos os dias de funcionamento.
 - Teste do pezinho: todos os dias de funcionamento, mas cada equipe atende em seus
-  dias (equipe 1 de segunda a quinta; equipe 2 de terça a sexta). Por isso é
+  dias (Equipe 1 de segunda a quinta; Equipe 2 de terça a sexta). Por isso é
   preciso saber qual é o agente de saúde da família.
-- Visitas dos agentes comunitários de saúde (pedido pelo grupo de WhatsApp do agente).
-- Planejamento familiar: [A CONFIRMAR].
+- Visitas domiciliares: dos agentes de saúde (pedido pelo grupo de WhatsApp do agente)
+  e da equipe (Equipe 1 na quinta de manhã; Equipe 2 na terça à tarde).
 
 ## Farmácia
 A UBS não tem farmácia. Para retirar medicamentos, a pessoa deve ir à farmácia do
 centro da cidade, levando a receita.
 
 ## Como agendar
-- Forma de agendamento de consultas: [A CONFIRMAR].
+- Agendamento de consultas e retirada de resultados do exame preventivo: na UBS, de
+  manhã a partir das 10h e à tarde a partir das 15h.
+- As consultas são agendadas no dia da equipe do agente de saúde da pessoa.
 
 ## Encaminhamentos
 - Exames, especialistas, hospital ou pronto-atendimento mais próximo e CAPS:
